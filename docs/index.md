@@ -15,3 +15,11 @@ La livraison intermédiaire comprend l’accueil et la boutique avec un panier s
 
 Le projet complet prévoit cinq pages. Échéance globale : 27/10/2026 à 11 h 59.
 
+## Ressources
+
+- Logo : images/logo.png.
+- Fonds : home-bg.png et shop-bg.png.
+- Boosters : beginner-pack.png, legends-pack.png, dark-pack.png et lucky-pack.png.
+- Types : type-light.png, type-darkness.png, type-minions.png et type-spells.png.
+- Légendaires : aurelion-dawnkeeper.png, nyxara-veilweaver.png, thorne-ancient-warden.png et celestial-convergence.png.
+
