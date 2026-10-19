@@ -37,3 +37,12 @@ Le joueur peut ajouter, modifier, retirer, vider et confirmer une commande.
 Le bouton moins retire une ligne lorsque sa quantité atteint zéro.
 Le panier se réinitialise après actualisation. Aucun inventaire n’est créé.
 
+## Planning
+
+| Date | Travail |
+|---|---|
+| 19/10/2026 | Compréhension du brief et préparation de la documentation. |
+| 20/10/2026 | Structure des fichiers, Tailwind par CDN et ressources visuelles. |
+| 21/10/2026 | Navigation commune, accueil et présentation des boosters. |
+| 22/10/2026 | Boutique, panier simple et vérifications de la version intermédiaire. |
+
