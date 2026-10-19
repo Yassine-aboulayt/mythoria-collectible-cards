@@ -46,3 +46,18 @@ Le panier se réinitialise après actualisation. Aucun inventaire n’est créé
 | 21/10/2026 | Navigation commune, accueil et présentation des boosters. |
 | 22/10/2026 | Boutique, panier simple et vérifications de la version intermédiaire. |
 
+## Vérifications prévues
+
+- [ ] Vérifier les liens, les images, Home et Boutique.
+- [ ] Ajouter un exemplaire de chaque booster : total 300 MAD.
+- [ ] Regrouper les ajouts du même booster.
+- [ ] Refuser une quantité vide, nulle, négative ou décimale.
+- [ ] Tester les boutons plus, moins, Supprimer et Vider le panier.
+- [ ] Confirmer une commande et retrouver un panier vide.
+- [ ] Vérifier le README et les liens du livrable.
+
+## Suite du projet
+
+À faire : installation locale de Tailwind et build npm, menu mobile,
+sauvegarde LocalStorage, inventaire des boosters et vérification du déploiement.
+Les pages Ouverture, Grimoire et Mon jeu restent réservées à la suite du projet.
