@@ -54,4 +54,80 @@ function afficherPanier() {
     document.getElementById("acheter").disabled = true;
 }
 
+produits.forEach(function(produit) {
+    let article = document.getElementById(produit.id);
+    let bouton = article.querySelector(".ajouter");
+    bouton.disabled = false;
+    bouton.onclick = function() {
+        ajouterProduit(produit.id);
+    };
+});
+
+function ajouterProduit(id) {
+    let article = document.getElementById(id);
+    let quantite = Number(article.querySelector(".quantite-produit").value);
+
+    if (quantite > 0 && quantite % 1 === 0) {
+        let produit = produits.find(function(item) {
+            return item.id === id;
+        });
+        let existe = panier.find(function(item) {
+            return item.id === id;
+        });
+
+        if (existe) {
+            existe.quantite = existe.quantite + quantite;
+        } else {
+            panier.push({
+                id: produit.id,
+                nom: produit.nom,
+                image: produit.image,
+                prix: produit.prix,
+                numero: produit.numero,
+                quantite: quantite
+            });
+        }
+        afficherPanier();
+    } else {
+        alert("Choisissez une quantité entière supérieure à zéro.");
+    }
+}
+
+function changerQuantite(id, changement) {
+    let produit = panier.find(function(item) {
+        return item.id === id;
+    });
+    produit.quantite = produit.quantite + changement;
+
+    if (produit.quantite === 0) {
+        supprimerProduit(id);
+    } else {
+        afficherPanier();
+    }
+}
+
+function modifierQuantite(id, champ) {
+    let produit = panier.find(function(item) {
+        return item.id === id;
+    });
+    let quantite = Number(champ.value);
+
+    if (quantite > 0 && quantite % 1 === 0) {
+        produit.quantite = quantite;
+    } else {
+        alert("Choisissez une quantité entière supérieure à zéro.");
+    }
+    afficherPanier();
+}
+
+function supprimerProduit(id) {
+    let numero = panier.findIndex(function(item) {
+        return item.id === id;
+    });
+    if (numero !== -1) {
+        panier.splice(numero, 1);
+    }
+    afficherPanier();
+}
+
 afficherPanier();
