@@ -61,3 +61,15 @@ function afficherPanier() {
     document.getElementById("vider-panier").disabled = vide;
 }
 
+// Ajoute la quantité choisie au panier.
+function ajouterProduit(indice) {
+    let article = document.getElementById(produits[indice].id);
+    let quantite = article.getElementsByClassName("quantite-produit")[0].value * 1;
+    if (quantite > 0 && quantite % 1 === 0) {
+        panier[indice] = panier[indice] + quantite;
+        afficherPanier();
+    } else {
+        alert("Choisissez une quantité entière supérieure à zéro.");
+    }
+}
+
