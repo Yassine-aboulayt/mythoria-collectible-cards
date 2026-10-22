@@ -50,7 +50,6 @@ function afficherPanier() {
         document.getElementById("acheter-vide").hidden = true;
         document.getElementById("vider-panier").disabled = false;
     }
-    document.getElementById("vider-panier").disabled = true;
     document.getElementById("acheter").disabled = true;
 }
 
@@ -129,5 +128,12 @@ function supprimerProduit(id) {
     }
     afficherPanier();
 }
+
+function viderPanier() {
+    panier.length = 0;
+    afficherPanier();
+}
+
+document.getElementById("vider-panier").onclick = viderPanier;
 
 afficherPanier();
