@@ -79,3 +79,10 @@ function viderPanier() {
     afficherPanier();
 }
 
+// Confirme la commande et vide le panier.
+function commander() {
+    if (total > 0) { alert("Commande confirmée !"); viderPanier(); }
+}
+document.getElementById("acheter").onclick = commander;
+document.getElementById("vider-panier").onclick = viderPanier;
+afficherPanier();
