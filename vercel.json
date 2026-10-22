@@ -1,0 +1,32 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/html/index.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/html/index.html"
+    },
+    {
+      "source": "/shop.html",
+      "destination": "/html/shop.html"
+    },
+    {
+      "source": "/opening.html",
+      "destination": "/html/opening.html"
+    },
+    {
+      "source": "/grimoire.html",
+      "destination": "/html/grimoire.html"
+    },
+    {
+      "source": "/deck.html",
+      "destination": "/html/deck.html"
+    },
+    {
+      "source": "/style.css",
+      "destination": "/html/style.css"
+    }
+  ]
+}
