@@ -73,3 +73,9 @@ function ajouterProduit(indice) {
     }
 }
 
+// Remet les quantités à zéro.
+function viderPanier() {
+    for (let i = 0; i < panier.length; i++) { panier[i] = 0; }
+    afficherPanier();
+}
+
