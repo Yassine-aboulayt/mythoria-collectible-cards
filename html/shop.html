@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Boutique | MYTHORIA</title>
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
         <link rel="stylesheet" href="style.css">
-        <script src="../js/shop.js" defer></script>
+        <script src="../js/shop.js" defer=""></script>
     </head>
     <body class="bg-gray-900 text-white">
         <header class="bg-gray-900 border-b border-yellow-700">
@@ -24,8 +25,171 @@
                 </nav>
             </div>
         </header>
+
         <main id="main">
+            <section class="boutique bg-cover bg-center border-b border-yellow-800">
+                <div class="bg-black bg-opacity-60 p-4 sm:p-8">
+                    <div class="flex flex-wrap items-center justify-between gap-5">
+                        <div>
+                            <p class="text-yellow-300 text-sm mb-4">LA BOUTIQUE DE MYTHORIA</p>
+                            <h1 class="font-serif text-3xl sm:text-5xl text-yellow-100 mb-4">Choisissez votre booster</h1>
+                            <p class="text-gray-300 mb-4">Quatre packs pour commencer votre collection et découvrir le royaume.</p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
+                            <a href="#boosters" class="bg-purple-900 hover:bg-purple-800 border border-purple-600 text-white font-bold text-center rounded p-3">Voir les packs ↓</a>
+                            <a href="#zone-panier" class="bg-yellow-600 hover:bg-yellow-500 border border-yellow-400 text-gray-900 font-bold text-center rounded p-3">Voir le panier</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="flex flex-wrap justify-between items-start gap-8 bg-gray-800 p-4 lg:p-8">
+                <section id="boosters" class="w-full lg:w-auto">
+                    <h2 class="font-serif text-3xl text-yellow-200 mb-5">Nos boosters</h2>
+                    <div class="flex flex-col gap-5" id="catalogue">
+                        <div class="flex flex-wrap justify-center gap-5">
+                            <article id="pack-beginner" class="produit w-full sm:w-72 flex flex-col bg-gray-900 border border-yellow-800 rounded p-4 text-center hover:border-yellow-400">
+                                <div class="flex justify-center mb-4">
+                                    <div class="w-48">
+                                        <img src="../images/boosters/beginner-pack.png" alt="Booster Pack Débutant">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <h3 class="titre font-serif text-xl text-yellow-100 mb-2">Pack Débutant</h3>
+                                    <p class="text-xs text-gray-400 mb-3">POUR DÉBUTER</p>
+                                    <p class="text-sm text-gray-400 mb-3">Un premier pas dans Mythoria avec plusieurs types de cartes.</p>
+                                    <p class="text-sm text-gray-400 mb-3">5 cartes par pack</p>
+                                    <details class="text-sm pt-3 mt-auto">
+                                        <summary class="text-yellow-200 cursor-pointer">En savoir plus</summary>
+                                        <p class="text-sm text-gray-400 mt-4">Découvrez la lumière, les ténèbres, les créatures et les sorts. Un pack simple pour commencer.</p>
+                                    </details>
+                                </div>
+                                <div class="flex flex-col gap-3 border-t border-yellow-800 pt-4 mt-4">
+                                    <p class="prix text-yellow-200 text-2xl font-bold">40 MAD</p>
+                                    <label>Quantité <input type="number" min="1" step="1" value="1" class="quantite-produit w-16 text-gray-900 p-2 rounded"></label>
+                                    <button type="button" class="ajouter w-full bg-purple-900 hover:bg-purple-800 border border-purple-600 text-white font-bold text-sm p-3 rounded" disabled>
+                                        Ajouter au panier
+                                    </button>
+                                </div>
+                            </article>
+                            <article id="pack-legends" class="produit w-full sm:w-72 flex flex-col bg-gray-900 border border-yellow-800 rounded p-4 text-center hover:border-yellow-400">
+                                <div class="flex justify-center mb-4">
+                                    <div class="w-48">
+                                        <img src="../images/boosters/legends-pack.png" alt="Booster Invocation des Légendes">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <h3 class="titre font-serif text-xl text-yellow-100 mb-2">Invocation des Légendes</h3>
+                                    <p class="text-xs text-gray-400 mb-3">HÉROS ET LÉGENDES</p>
+                                    <p class="text-sm text-gray-400 mb-3">Un grand pack inspiré des héros et des récits anciens du royaume.</p>
+                                    <p class="text-sm text-gray-400 mb-3">10 cartes par pack</p>
+                                    <details class="text-sm pt-3 mt-auto">
+                                        <summary class="text-yellow-200 cursor-pointer">En savoir plus</summary>
+                                        <p class="text-sm text-gray-400 mt-4">Explorez les histoires de Mythoria avec un pack plus grand. Une carte légendaire n’est pas garantie.</p>
+                                    </details>
+                                </div>
+                                <div class="flex flex-col gap-3 border-t border-yellow-800 pt-4 mt-4">
+                                    <p class="prix text-yellow-200 text-2xl font-bold">120 MAD</p>
+                                    <label>Quantité <input type="number" min="1" step="1" value="1" class="quantite-produit w-16 text-gray-900 p-2 rounded"></label>
+                                    <button type="button" class="ajouter w-full bg-purple-900 hover:bg-purple-800 border border-purple-600 text-white font-bold text-sm p-3 rounded" disabled>
+                                        Ajouter au panier
+                                    </button>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="flex flex-wrap justify-center gap-5">
+                            <article id="pack-dark" class="produit w-full sm:w-72 flex flex-col bg-gray-900 border border-yellow-800 rounded p-4 text-center hover:border-yellow-400">
+                                <div class="flex justify-center mb-4">
+                                    <div class="w-48">
+                                        <img src="../images/boosters/dark-pack.png" alt="Booster Invocation des Ténèbres">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <h3 class="titre font-serif text-xl text-yellow-100 mb-2">Invocation des Ténèbres</h3>
+                                    <p class="text-xs text-gray-400 mb-3">TÉNÈBRES ET MAGIE</p>
+                                    <p class="text-sm text-gray-400 mb-3">Découvrez les créatures de l’ombre et la magie mystérieuse de Mythoria.</p>
+                                    <p class="text-sm text-gray-400 mb-3">7 cartes par pack</p>
+                                    <details class="text-sm pt-3 mt-auto">
+                                        <summary class="text-yellow-200 cursor-pointer">En savoir plus</summary>
+                                        <p class="text-sm text-gray-400 mt-4">Un univers de dragons obscurs, de gardiens nocturnes et de sorts anciens.</p>
+                                    </details>
+                                </div>
+                                <div class="flex flex-col gap-3 border-t border-yellow-800 pt-4 mt-4">
+                                    <p class="prix text-yellow-200 text-2xl font-bold">80 MAD</p>
+                                    <label>Quantité <input type="number" min="1" step="1" value="1" class="quantite-produit w-16 text-gray-900 p-2 rounded"></label>
+                                    <button type="button" class="ajouter w-full bg-purple-900 hover:bg-purple-800 border border-purple-600 text-white font-bold text-sm p-3 rounded" disabled>
+                                        Ajouter au panier
+                                    </button>
+                                </div>
+                            </article>
+                            <article id="pack-lucky" class="produit w-full sm:w-72 flex flex-col bg-gray-900 border border-yellow-800 rounded p-4 text-center hover:border-yellow-400">
+                                <div class="flex justify-center mb-4">
+                                    <div class="w-48">
+                                        <img src="../images/boosters/lucky-pack.png" alt="Booster Pack Chance">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <h3 class="titre font-serif text-xl text-yellow-100 mb-2">Pack Chance</h3>
+                                    <p class="text-xs text-gray-400 mb-3">LAISSEZ FAIRE LE DESTIN</p>
+                                    <p class="text-sm text-gray-400 mb-3">Un mélange de cartes pour les collectionneurs qui aiment les surprises.</p>
+                                    <p class="text-sm text-gray-400 mb-3">6 cartes par pack</p>
+                                    <details class="text-sm pt-3 mt-auto">
+                                        <summary class="text-yellow-200 cursor-pointer">En savoir plus</summary>
+                                        <p class="text-sm text-gray-400 mt-4">Partez à la découverte des quatre types de cartes et laissez-vous surprendre.</p>
+                                    </details>
+                                </div>
+                                <div class="flex flex-col gap-3 border-t border-yellow-800 pt-4 mt-4">
+                                    <p class="prix text-yellow-200 text-2xl font-bold">60 MAD</p>
+                                    <label>Quantité <input type="number" min="1" step="1" value="1" class="quantite-produit w-16 text-gray-900 p-2 rounded"></label>
+                                    <button type="button" class="ajouter w-full bg-purple-900 hover:bg-purple-800 border border-purple-600 text-white font-bold text-sm p-3 rounded" disabled>
+                                        Ajouter au panier
+                                    </button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+                <section id="zone-panier" class="w-full lg:w-80 flex-shrink-0 self-start lg:ml-auto bg-gray-900 border border-yellow-700 rounded-lg">
+                    <div class="bg-gray-900 border-b border-yellow-700 rounded-t-lg p-5">
+                        <h2 class="font-serif text-2xl text-yellow-300">Mon panier</h2>
+                    </div>
+                    <div class="p-5">
+                        <p id="vide" class="bg-black bg-opacity-30 border border-gray-700 rounded text-center text-sm text-gray-400 p-5 mb-4">Votre panier est vide.</p>
+                        <ul id="panier" class="max-h-80 overflow-y-auto"></ul>
+                        <template id="modele-panier">
+                            <li class="flex items-center justify-between gap-3 border-b border-gray-700 p-3">
+                                <div>
+                                    <p class="nom-panier text-sm text-yellow-100 font-bold"></p>
+                                    <p class="prix-panier text-sm text-gray-400 mt-1"></p>
+                                    <div class="flex items-center gap-3">
+                                        <button type="button" class="moins" aria-label="Diminuer la quantité">−</button>
+                                        <label>Quantité <input type="number" min="1" step="1" value="1" class="quantite-panier w-16 text-gray-900 p-2 rounded"></label>
+                                        <button type="button" class="plus" aria-label="Augmenter la quantité">+</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="supprimer text-purple-200 hover:text-yellow-200 border border-purple-800 text-xs p-2 rounded">Supprimer</button>
+                            </li>
+                        </template>
+                        <div class="flex items-center justify-between gap-3 bg-gray-800 border border-gray-700 rounded p-4 mt-4 mb-4">
+                            <p class="text-gray-300">Total :</p>
+                            <p class="text-2xl font-bold text-yellow-200"><span id="total">0</span> MAD</p>
+                        </div>
+                        <button type="button" id="acheter" class="w-full bg-yellow-600 hover:bg-yellow-500 border border-yellow-400 text-gray-900 font-bold p-4 rounded" hidden disabled>Acheter</button>
+                        <button type="button" id="acheter-vide" class="w-full bg-yellow-600 hover:bg-yellow-500 border border-yellow-400 text-gray-900 font-bold p-4 rounded opacity-50" disabled>Acheter</button>
+                        <button type="button" id="vider-panier" disabled>Vider le panier</button>
+                        <p id="message" class="text-yellow-200 text-sm text-center mt-4"></p>
+                    </div>
+                </section>
+            </div>
+
+            <section class="bg-gray-900 bg-opacity-90 border-t border-yellow-800 p-4 sm:p-8 text-center">
+                <h2 class="font-serif text-3xl text-yellow-200 mb-4">Une collection à découvrir</h2>
+                <p class="text-gray-300 mb-4">35 cartes, quatre types et quatre légendaires aux pouvoirs uniques.</p>
+                <p class="text-sm text-gray-400 mb-4">13 communes · 10 rares · 8 épiques · 4 légendaires</p>
+                <a href="index.html#legendary" class="inline-block bg-purple-900 hover:bg-purple-800 border border-purple-600 text-white font-bold p-3 rounded">Voir les cartes légendaires</a>
+            </section>
         </main>
+
         <footer class="bg-gray-900 border-t border-yellow-700">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-5 p-4">
                 <a href="index.html" class="w-48">
