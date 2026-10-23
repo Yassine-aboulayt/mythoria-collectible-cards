@@ -103,7 +103,28 @@ function viderPanier() {
 
 // les boosters achetés vont dans la sauvegarde
 function commander() {
-    if (total > 0) { alert("Commande confirmée !"); viderPanier(); }
+    if (total > 0) {
+        let partie = chargerPartie();
+        if (partie === null) {
+            alert("Impossible de lire la sauvegarde. Votre panier reste disponible.");
+            return;
+        }
+        for (let i = 0; i < produits.length; i++) {
+            if (!Number.isSafeInteger(panier[i]) || !Number.isSafeInteger(partie.boosters[i] + panier[i])) {
+                alert("Choisissez une quantité entière valide.");
+                return;
+            }
+            partie.boosters[i] = partie.boosters[i] + panier[i];
+        }
+        if (sauvegarderPartie(partie)) {
+            viderPanier();
+            document.getElementById("message").textContent = "Vos boosters sont disponibles dans la page Ouverture.";
+            document.getElementById("commande-prete").hidden = false;
+            alert("Commande confirmée !");
+        } else {
+            alert("Impossible d’enregistrer votre achat. Votre panier n’a pas été vidé.");
+        }
+    }
 }
 document.getElementById("acheter").onclick = commander;
 document.getElementById("vider-panier").onclick = viderPanier;
