@@ -1,0 +1,731 @@
+let cartes = [
+    {
+        id: "aurelion-dawnkeeper",
+        nom: "Aurélion, Gardien de l’Aube",
+        type: "Lumière",
+        rarete: "Légendaire",
+        cout: 8,
+        puissance: 8,
+        vie: 10,
+        pouvoir: "Aube éternelle",
+        description: "Soigne 4 points de vie à tous vos alliés.",
+        image: "../images/cards/legendary/aurelion-dawnkeeper.png"
+    },
+    {
+        id: "nyxara-veilweaver",
+        nom: "Nyxara, Tisseuse du Voile",
+        type: "Ténèbres",
+        rarete: "Légendaire",
+        cout: 7,
+        puissance: 9,
+        vie: 6,
+        pouvoir: "Voile de la nuit",
+        description: "Inflige 5 dégâts et bloque une attaque ennemie.",
+        image: "../images/cards/legendary/nyxara-veilweaver.png"
+    },
+    {
+        id: "thorne-ancient-warden",
+        nom: "Thorne, Gardien Ancestral",
+        type: "Créatures",
+        rarete: "Légendaire",
+        cout: 6,
+        puissance: 6,
+        vie: 12,
+        pouvoir: "Racines ancestrales",
+        description: "Protège un allié et lui rend 4 points de vie.",
+        image: "../images/cards/legendary/thorne-ancient-warden.png"
+    },
+    {
+        id: "celestial-convergence",
+        nom: "Convergence Céleste",
+        type: "Sorts",
+        rarete: "Légendaire",
+        cout: 8,
+        puissance: 6,
+        vie: 0,
+        pouvoir: "Éclipse céleste",
+        description: "Inflige 3 dégâts aux ennemis et soigne vos alliés de 3.",
+        image: "../images/cards/legendary/celestial-convergence.png"
+    },
+    {
+        id: "solar-page",
+        nom: "Page du Soleil",
+        type: "Lumière",
+        rarete: "Commune",
+        cout: 1,
+        puissance: 1,
+        vie: 3,
+        pouvoir: "Étincelle de courage",
+        description: "Donne 1 point d’attaque à un allié ce tour.",
+        image: "../images/cards/common/solar-page.png"
+    },
+    {
+        id: "bell-tender",
+        nom: "Gardienne des Cloches",
+        type: "Lumière",
+        rarete: "Commune",
+        cout: 3,
+        puissance: 2,
+        vie: 4,
+        pouvoir: "Carillon sacré",
+        description: "Rend 1 point de vie à tous vos alliés.",
+        image: "../images/cards/common/bell-tender.png"
+    },
+    {
+        id: "veil-cat",
+        nom: "Chat du Voile",
+        type: "Ténèbres",
+        rarete: "Commune",
+        cout: 1,
+        puissance: 1,
+        vie: 2,
+        pouvoir: "Bond furtif",
+        description: "Évite la prochaine attaque ennemie.",
+        image: "../images/cards/common/veil-cat.png"
+    },
+    {
+        id: "ash-imp",
+        nom: "Diablotin de Cendre",
+        type: "Ténèbres",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 3,
+        vie: 2,
+        pouvoir: "Braise sombre",
+        description: "Inflige 1 dégât à un ennemi à son arrivée.",
+        image: "../images/cards/common/ash-imp.png"
+    },
+    {
+        id: "twilight-apprentice",
+        nom: "Apprenti du Crépuscule",
+        type: "Ténèbres",
+        rarete: "Commune",
+        cout: 3,
+        puissance: 2,
+        vie: 4,
+        pouvoir: "Leçon nocturne",
+        description: "Piochez une carte si un ennemi est blessé.",
+        image: "../images/cards/common/twilight-apprentice.png"
+    },
+    {
+        id: "sunwell-dove",
+        nom: "Colombe du Puits Solaire",
+        type: "Lumière",
+        rarete: "Commune",
+        cout: 1,
+        puissance: 1,
+        vie: 2,
+        pouvoir: "Aile apaisante",
+        description: "Rend 1 point de vie à un allié.",
+        image: "../images/cards/common/sunwell-dove.png"
+    },
+    {
+        id: "prism-lamplighter",
+        nom: "Allumeur de Prismes",
+        type: "Lumière",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 2,
+        vie: 3,
+        pouvoir: "Flamme de garde",
+        description: "Bloque le prochain dégât reçu par un allié.",
+        image: "../images/cards/common/prism-lamplighter.png"
+    },
+    {
+        id: "chapel-sentry",
+        nom: "Veilleur de la Chapelle",
+        type: "Lumière",
+        rarete: "Commune",
+        cout: 3,
+        puissance: 2,
+        vie: 5,
+        pouvoir: "Garde dévouée",
+        description: "Absorbe 2 dégâts destinés à un allié.",
+        image: "../images/cards/common/chapel-sentry.png"
+    },
+    {
+        id: "mist-moth",
+        nom: "Phalène de Brume",
+        type: "Ténèbres",
+        rarete: "Commune",
+        cout: 1,
+        puissance: 1,
+        vie: 2,
+        pouvoir: "Poussière nocturne",
+        description: "Réduit de 1 l’attaque d’un ennemi ce tour.",
+        image: "../images/cards/common/mist-moth.png"
+    },
+    {
+        id: "crypt-messenger",
+        nom: "Messager des Cryptes",
+        type: "Ténèbres",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 2,
+        vie: 3,
+        pouvoir: "Secret murmuré",
+        description: "Regardez la prochaine carte de votre pioche.",
+        image: "../images/cards/common/crypt-messenger.png"
+    },
+    {
+        id: "fern-turtle",
+        nom: "Tortue des Fougères",
+        type: "Créatures",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 1,
+        vie: 5,
+        pouvoir: "Abri de feuilles",
+        description: "Réduit de 1 les prochains dégâts reçus.",
+        image: "../images/cards/common/fern-turtle.png"
+    },
+    {
+        id: "copper-antler-hare",
+        nom: "Lièvre aux Bois Cuivrés",
+        type: "Créatures",
+        rarete: "Commune",
+        cout: 1,
+        puissance: 2,
+        vie: 1,
+        pouvoir: "Saut vif",
+        description: "Peut attaquer dès son arrivée.",
+        image: "../images/cards/common/copper-antler-hare.png"
+    },
+    {
+        id: "brook-salamander",
+        nom: "Salamandre du Ruisseau",
+        type: "Créatures",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 2,
+        vie: 3,
+        pouvoir: "Source vive",
+        description: "Rend 1 point de vie à deux alliés.",
+        image: "../images/cards/common/brook-salamander.png"
+    },
+    {
+        id: "gentle-rain",
+        nom: "Pluie Bienfaisante",
+        type: "Sorts",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 2,
+        vie: 0,
+        pouvoir: "Ondée vitale",
+        description: "Rend 2 points de vie à un allié.",
+        image: "../images/cards/common/gentle-rain.png"
+    },
+    {
+        id: "glimmer-thread",
+        nom: "Fil de Lueur",
+        type: "Sorts",
+        rarete: "Commune",
+        cout: 1,
+        puissance: 1,
+        vie: 0,
+        pouvoir: "Lien protecteur",
+        description: "Bloque le prochain dégât reçu par un allié.",
+        image: "../images/cards/common/glimmer-thread.png"
+    },
+    {
+        id: "lunar-pebble",
+        nom: "Galet Lunaire",
+        type: "Sorts",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 2,
+        vie: 0,
+        pouvoir: "Ricochet astral",
+        description: "Inflige 2 dégâts à un ennemi.",
+        image: "../images/cards/common/lunar-pebble.png"
+    },
+    {
+        id: "dawn-messenger",
+        nom: "Messagère du Matin",
+        type: "Lumière",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 2,
+        vie: 3,
+        pouvoir: "Courrier céleste",
+        description: "Piochez une carte à son arrivée.",
+        image: "../images/cards/common/dawn-messenger.png"
+    },
+    {
+        id: "ink-moth",
+        nom: "Papillon d’Encre",
+        type: "Ténèbres",
+        rarete: "Commune",
+        cout: 1,
+        puissance: 1,
+        vie: 2,
+        pouvoir: "Poussière obscure",
+        description: "Réduit de 1 la prochaine attaque d’un ennemi.",
+        image: "../images/cards/common/ink-moth.png"
+    },
+    {
+        id: "dew-turtle",
+        nom: "Tortue de Rosée",
+        type: "Créatures",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 1,
+        vie: 5,
+        pouvoir: "Refuge humide",
+        description: "Absorbe 1 dégât destiné à un allié.",
+        image: "../images/cards/common/dew-turtle.png"
+    },
+    {
+        id: "fern-hare",
+        nom: "Lièvre des Fougères",
+        type: "Créatures",
+        rarete: "Commune",
+        cout: 1,
+        puissance: 2,
+        vie: 1,
+        pouvoir: "Course vive",
+        description: "Peut attaquer dès son arrivée.",
+        image: "../images/cards/common/fern-hare.png"
+    },
+    {
+        id: "silver-thread",
+        nom: "Fil d’Argent",
+        type: "Sorts",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 2,
+        vie: 0,
+        pouvoir: "Lien protecteur",
+        description: "Bloque les 2 prochains dégâts reçus par un allié.",
+        image: "../images/cards/common/silver-thread.png"
+    },
+    {
+        id: "rain-of-petals",
+        nom: "Pluie de Pétales",
+        type: "Sorts",
+        rarete: "Commune",
+        cout: 2,
+        puissance: 1,
+        vie: 0,
+        pouvoir: "Rosée florale",
+        description: "Rend 1 point de vie à tous vos alliés.",
+        image: "../images/cards/common/rain-of-petals.png"
+    },
+    {
+        id: "radiant-cartographer",
+        nom: "Cartographe Radieuse",
+        type: "Lumière",
+        rarete: "Rare",
+        cout: 4,
+        puissance: 3,
+        vie: 5,
+        pouvoir: "Carte des étoiles",
+        description: "Piochez deux cartes, puis défaussez-en une.",
+        image: "../images/cards/rare/radiant-cartographer.png"
+    },
+    {
+        id: "prism-lancer",
+        nom: "Lancier du Prisme",
+        type: "Lumière",
+        rarete: "Rare",
+        cout: 4,
+        puissance: 4,
+        vie: 5,
+        pouvoir: "Pointe irisée",
+        description: "Inflige 2 dégâts et soigne un allié de 2.",
+        image: "../images/cards/rare/prism-lancer.png"
+    },
+    {
+        id: "chain-specter",
+        nom: "Spectre aux Chaînes",
+        type: "Ténèbres",
+        rarete: "Rare",
+        cout: 4,
+        puissance: 3,
+        vie: 5,
+        pouvoir: "Entraves spectrales",
+        description: "Empêche un ennemi d’attaquer ce tour.",
+        image: "../images/cards/rare/chain-specter.png"
+    },
+    {
+        id: "mirror-duelist",
+        nom: "Duelliste des Miroirs",
+        type: "Ténèbres",
+        rarete: "Rare",
+        cout: 5,
+        puissance: 5,
+        vie: 4,
+        pouvoir: "Reflet trompeur",
+        description: "Bloque une attaque et inflige 2 dégâts à son auteur.",
+        image: "../images/cards/rare/mirror-duelist.png"
+    },
+    {
+        id: "storm-antler-elk",
+        nom: "Élan des Orages",
+        type: "Créatures",
+        rarete: "Rare",
+        cout: 5,
+        puissance: 5,
+        vie: 6,
+        pouvoir: "Bois foudroyants",
+        description: "Inflige 2 dégâts à deux ennemis.",
+        image: "../images/cards/rare/storm-antler-elk.png"
+    },
+    {
+        id: "coral-basilisk",
+        nom: "Basilic de Corail",
+        type: "Créatures",
+        rarete: "Rare",
+        cout: 4,
+        puissance: 4,
+        vie: 5,
+        pouvoir: "Regard des récifs",
+        description: "Réduit de 2 la prochaine attaque d’un ennemi.",
+        image: "../images/cards/rare/coral-basilisk.png"
+    },
+    {
+        id: "embermane-lynx",
+        nom: "Lynx à Crinière de Feu",
+        type: "Créatures",
+        rarete: "Rare",
+        cout: 3,
+        puissance: 4,
+        vie: 3,
+        pouvoir: "Griffes de braise",
+        description: "Inflige 2 dégâts à un ennemi blessé.",
+        image: "../images/cards/rare/embermane-lynx.png"
+    },
+    {
+        id: "hourglass-reversal",
+        nom: "Sablier Renversé",
+        type: "Sorts",
+        rarete: "Rare",
+        cout: 3,
+        puissance: 3,
+        vie: 0,
+        pouvoir: "Seconde chance",
+        description: "Soigne un allié de 3 et piochez une carte.",
+        image: "../images/cards/rare/hourglass-reversal.png"
+    },
+    {
+        id: "comet-lattice",
+        nom: "Treillis de Comètes",
+        type: "Sorts",
+        rarete: "Rare",
+        cout: 4,
+        puissance: 3,
+        vie: 0,
+        pouvoir: "Filet stellaire",
+        description: "Inflige 3 dégâts et bloque une attaque ennemie.",
+        image: "../images/cards/rare/comet-lattice.png"
+    },
+    {
+        id: "storm-blade",
+        nom: "Lamier de l’Orage",
+        type: "Lumière",
+        rarete: "Rare",
+        cout: 4,
+        puissance: 4,
+        vie: 5,
+        pouvoir: "Foudre sacrée",
+        description: "Inflige 2 dégâts à un ennemi à son arrivée.",
+        image: "../images/cards/rare/storm-blade.png"
+    },
+    {
+        id: "frost-shade",
+        nom: "Spectre du Givre",
+        type: "Ténèbres",
+        rarete: "Rare",
+        cout: 4,
+        puissance: 3,
+        vie: 5,
+        pouvoir: "Étreinte glacée",
+        description: "Empêche un ennemi d’attaquer au prochain tour.",
+        image: "../images/cards/rare/frost-shade.png"
+    },
+    {
+        id: "iron-shell-tortoise",
+        nom: "Tortue de Fer",
+        type: "Créatures",
+        rarete: "Rare",
+        cout: 4,
+        puissance: 2,
+        vie: 7,
+        pouvoir: "Rempart vivant",
+        description: "Réduit de 2 les prochains dégâts reçus.",
+        image: "../images/cards/rare/iron-shell-tortoise.png"
+    },
+    {
+        id: "tide-sanctuary",
+        nom: "Sanctuaire des Marées",
+        type: "Sorts",
+        rarete: "Rare",
+        cout: 3,
+        puissance: 2,
+        vie: 0,
+        pouvoir: "Vague apaisante",
+        description: "Rend 2 points de vie à deux alliés.",
+        image: "../images/cards/rare/tide-sanctuary.png"
+    },
+    {
+        id: "star-compass",
+        nom: "Boussole Stellaire",
+        type: "Sorts",
+        rarete: "Rare",
+        cout: 3,
+        puissance: 0,
+        vie: 0,
+        pouvoir: "Cap des étoiles",
+        description: "Piochez deux cartes, puis défaussez-en une.",
+        image: "../images/cards/rare/star-compass.png"
+    },
+    {
+        id: "royal-sun-lion",
+        nom: "Lion du Zénith",
+        type: "Lumière",
+        rarete: "Épique",
+        cout: 6,
+        puissance: 6,
+        vie: 7,
+        pouvoir: "Rugissement solaire",
+        description: "Donne 2 points d’attaque à vos alliés ce tour.",
+        image: "../images/cards/epic/royal-sun-lion.png"
+    },
+    {
+        id: "royal-prism-mage",
+        nom: "Archimage du Prisme",
+        type: "Lumière",
+        rarete: "Épique",
+        cout: 6,
+        puissance: 4,
+        vie: 7,
+        pouvoir: "Reflets protecteurs",
+        description: "Bloque les 2 prochains dégâts reçus par chaque allié.",
+        image: "../images/cards/epic/royal-prism-mage.png"
+    },
+    {
+        id: "royal-halo-swan",
+        nom: "Cygne des Auréoles",
+        type: "Lumière",
+        rarete: "Épique",
+        cout: 5,
+        puissance: 4,
+        vie: 6,
+        pouvoir: "Grâce du ciel",
+        description: "Rend 3 points de vie à deux alliés.",
+        image: "../images/cards/epic/royal-halo-swan.png"
+    },
+    {
+        id: "mythic-mirror-duchess",
+        nom: "Duchesse des Miroirs",
+        type: "Ténèbres",
+        rarete: "Épique",
+        cout: 6,
+        puissance: 5,
+        vie: 6,
+        pouvoir: "Reflet trompeur",
+        description: "Bloque une attaque et inflige 3 dégâts à son auteur.",
+        image: "../images/cards/epic/mythic-mirror-duchess.png"
+    },
+    {
+        id: "mythic-void-manta",
+        nom: "Raie du Vide",
+        type: "Ténèbres",
+        rarete: "Épique",
+        cout: 7,
+        puissance: 7,
+        vie: 7,
+        pouvoir: "Marée du néant",
+        description: "Inflige 2 dégâts à tous les ennemis.",
+        image: "../images/cards/epic/mythic-void-manta.png"
+    },
+    {
+        id: "ancient-amber-basilisk",
+        nom: "Basilic d’Ambre",
+        type: "Créatures",
+        rarete: "Épique",
+        cout: 6,
+        puissance: 5,
+        vie: 8,
+        pouvoir: "Regard pétrifiant",
+        description: "Empêche deux ennemis d’attaquer au prochain tour.",
+        image: "../images/cards/epic/ancient-amber-basilisk.png"
+    },
+    {
+        id: "ancient-cloud-whale",
+        nom: "Baleine des Nuages",
+        type: "Créatures",
+        rarete: "Épique",
+        cout: 7,
+        puissance: 5,
+        vie: 10,
+        pouvoir: "Chant des hauteurs",
+        description: "Rend 2 points de vie à tous vos alliés.",
+        image: "../images/cards/epic/ancient-cloud-whale.png"
+    },
+    {
+        id: "ancient-ruby-scorpion",
+        nom: "Scorpion de Rubis",
+        type: "Créatures",
+        rarete: "Épique",
+        cout: 5,
+        puissance: 6,
+        vie: 5,
+        pouvoir: "Dard incandescent",
+        description: "Inflige 3 dégâts à un ennemi blessé.",
+        image: "../images/cards/epic/ancient-ruby-scorpion.png"
+    },
+    {
+        id: "mythic-hourglass",
+        nom: "Sablier des Âges",
+        type: "Sorts",
+        rarete: "Épique",
+        cout: 6,
+        puissance: 0,
+        vie: 0,
+        pouvoir: "Instant suspendu",
+        description: "Empêche tous les ennemis d’attaquer au prochain tour.",
+        image: "../images/cards/epic/mythic-hourglass.png"
+    },
+    {
+        id: "mythic-root-crown",
+        nom: "Couronne des Saisons",
+        type: "Sorts",
+        rarete: "Épique",
+        cout: 6,
+        puissance: 2,
+        vie: 0,
+        pouvoir: "Renouveau sylvestre",
+        description: "Donne 2 points d’attaque et de vie à vos créatures.",
+        image: "../images/cards/epic/mythic-root-crown.png"
+    }
+];
+
+let raretes = ["Commune", "Rare", "Épique", "Légendaire"];
+
+let boosters = [
+    {
+        id: "pack-beginner",
+        nom: "Pack Débutant",
+        nombre: 5,
+        image: "../images/boosters/beginner-pack.png",
+        types: ["Lumière","Ténèbres","Créatures","Sorts"],
+        chances: [70,23,6,1]
+    },
+    {
+        id: "pack-legends",
+        nom: "Invocation des Légendes",
+        nombre: 10,
+        image: "../images/boosters/legends-pack.png",
+        types: ["Lumière","Ténèbres","Créatures","Sorts"],
+        chances: [40,35,15,10]
+    },
+    {
+        id: "pack-dark",
+        nom: "Invocation des Ténèbres",
+        nombre: 7,
+        image: "../images/boosters/dark-pack.png",
+        types: ["Ténèbres","Sorts"],
+        chances: [60,25,12,3]
+    },
+    {
+        id: "pack-lucky",
+        nom: "Pack Chance",
+        nombre: 6,
+        image: "../images/boosters/lucky-pack.png",
+        types: ["Lumière","Ténèbres","Créatures","Sorts"],
+        chances: [50,30,15,5]
+    }
+];
+
+function carteParId(id) {
+    for (let i = 0; i < cartes.length; i++) {
+        if (cartes[i].id === id) {
+            return cartes[i];
+        }
+    }
+    return null;
+}
+
+// on relit la partie enregistrée dans le navigateur
+function chargerPartie() {
+    let partie = {
+        catalogue: "mythoria-50",
+        boosters: [0, 0, 0, 0],
+        collection: [],
+        dernierTirage: [],
+        dernierBooster: 0
+    };
+    try {
+        let texte = localStorage.getItem("mythoria_partie");
+        if (texte === null) {
+            return partie;
+        }
+        let data = JSON.parse(texte);
+        if (data === null) {
+            return null;
+        }
+        if (!Array.isArray(data.boosters)) {
+            return null;
+        }
+        if (data.boosters.length !== boosters.length) {
+            return null;
+        }
+        if (!Array.isArray(data.collection) || !Array.isArray(data.dernierTirage)) {
+            return null;
+        }
+        for (let i = 0; i < data.boosters.length; i++) {
+            if (!Number.isSafeInteger(data.boosters[i]) || data.boosters[i] < 0) {
+                return null;
+            }
+        }
+        let nouveauCatalogue = data.catalogue !== "mythoria-50";
+        if (nouveauCatalogue) {
+            data.boosters = [0, 0, 0, 0];
+            data.collection = [];
+            data.dernierTirage = [];
+            data.dernierBooster = 0;
+            data.catalogue = "mythoria-50";
+        }
+        for (let i = 0; i < data.collection.length; i++) {
+            let carte = data.collection[i];
+            if (!carte || carteParId(carte.id) === null || !Number.isSafeInteger(carte.quantite) || carte.quantite < 1) {
+                return null;
+            }
+            for (let j = 0; j < i; j++) {
+                if (data.collection[j].id === carte.id) {
+                    return null;
+                }
+            }
+        }
+        if (!Number.isInteger(data.dernierBooster) || data.dernierBooster < 0 || data.dernierBooster >= boosters.length) {
+            return null;
+        }
+        if (data.dernierTirage.length > 0 && data.dernierTirage.length !== boosters[data.dernierBooster].nombre) {
+            return null;
+        }
+        for (let i = 0; i < data.dernierTirage.length; i++) {
+            if (carteParId(data.dernierTirage[i]) === null) {
+                return null;
+            }
+        }
+        if (nouveauCatalogue) {
+            if (!sauvegarderPartie(data)) {
+                return null;
+            }
+        }
+        return data;
+    } catch (erreur) {
+        return null;
+    }
+}
+
+// le stockage peut être bloqué par le navigateur
+function sauvegarderPartie(partie) {
+    try {
+        localStorage.setItem("mythoria_partie", JSON.stringify(partie));
+        return true;
+    } catch (erreur) {
+        return false;
+    }
+}
