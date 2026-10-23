@@ -7,6 +7,7 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
         <link rel="stylesheet" href="style.css" />
+        <script src="../js/data.js" defer></script>
     </head>
     <body class="bg-gray-900 text-white min-h-screen flex flex-col">
         <header class="bg-gray-900 border-b border-yellow-700">
@@ -25,7 +26,101 @@
             </div>
         </header>
 
-        <main class="flex-1" id="main"></main>
+        <main class="flex-1" id="main">
+        <section class="ouverture bg-cover bg-center p-4 text-center">
+            <h1 class="text-3xl font-serif text-yellow-200 mb-4">
+                La chambre d'Ouverture
+            </h1>
+            <div class="flex flex-wrap justify-center gap-4">
+                <p> Boosters disponibles : <span id="total-boosters">0</span></p>
+            </div>
+        </section>
+
+        <section class="bg-gray-800 p-4">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                <h2 class="text-2xl font-serif text-yellow-200"> Mes boosters</h2>
+                <a href="shop.html" class="text-yellow-200 underline">
+                    Retour a la boutique
+                </a>
+            </div>
+            <p id="stock-vide" class="text-gray-300 text-center mb-4">
+                Achetez un booster dans la boutique pour commencer
+            </p>
+
+            <div id="liste-boosters" class="flex flex-wrap justify-center gap-4">
+                <article class="w-64 bg-gray-900 border border-yellow-800 rounded p-4 text-center">
+                <img src="../images/boosters/beginner-pack.png" alt="Pack Débutant" class="w-32 mx-auto mb-4">
+                    <h3 class="text-xl font-serif text-yellow-100 mb-2">
+                        Pack Debutant
+                    </h3>
+                    <p>5 cartes par booster</p>
+                    <p class="mb-4"><span id="stock-0">0</span> disponible(s)</p>
+                    <button id="choisir-0" type="button" class="bg-purple-900 hover:bg-purple-800 p-4 rounded w-full" disabled> Choisir</button>
+                </article>
+
+                <article class="w-64 bg-gray-900 border border-yellow-800 rounded p-4 text-center">
+                    <img src="../images/boosters/legends-pack.png" alt="Invocation des Légendes" class="w-32 mx-auto mb-4">
+                    <h3 class="text-xl font-serif text-yellow-100 mb-2">Invocation des Légendes</h3>
+                    <p>10 cartes par booster</p>
+                    <p class="mb-4"><span id="stock-1">0</span> disponible(s)</p>
+                    <button id="choisir-1" type="button" class="bg-purple-900 hover:bg-purple-800 p-4 rounded w-full" disabled>Choisir</button>
+                </article>
+
+                <article class="w-64 bg-gray-900 border border-yellow-800 rounded p-4 text-center">
+                    <img src="../images/boosters/dark-pack.png" alt="Invocation des Ténèbres" class="w-32 mx-auto mb-4">
+                    <h3 class="text-xl font-serif text-yellow-100 mb-2">Invocation des Ténèbres</h3>
+                    <p>7 cartes par booster</p>
+                    <p class="mb-4"><span id="stock-2">0</span> disponible(s)</p>
+                    <button id="choisir-2" type="button" class="bg-purple-900 hover:bg-purple-800 p-4 rounded w-full" disabled>Choisir</button>
+                </article>
+
+                <article class="w-64 bg-gray-900 border border-yellow-800 rounded p-4 text-center">
+                    <img src="../images/boosters/lucky-pack.png" alt="Pack Chance" class="w-32 mx-auto mb-4">
+                    <h3 class="text-xl font-serif text-yellow-100 mb-2">Pack Chance</h3>
+                    <p>6 cartes par booster</p>
+                    <p class="mb-4"><span id="stock-3">0</span> disponible(s)</p>
+                    <button id="choisir-3" type="button" class="bg-purple-900 hover:bg-purple-800 p-4 rounded w-full" disabled>Choisir</button>
+                </article>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 bg-gray-900 border border-purple-800 rounded p-4 mt-4">
+                <img id="booster-choisi" src="../images/boosters/beginner-pack.png" alt="Pack Débutant" class="w-32">
+                <div>
+                    <p class="text-purple-200 mb-2">BOOSTER CHOISI</p>
+                    <h2 id="nom-booster" class="text-2xl font-serif text-yellow-200 mb-4">Pack Débutant</h2>
+                    <p id="contenu-booster" class="text-gray-300 mb-4">5 cartes à révéler.</p>
+                    <p id="types-booster" class="text-gray-400 mb-4"></p>
+                    <button id="ouvrir-booster" type="button" class="bg-yellow-600 hover:bg-yellow-500 text-gray-900 font-bold p-4 rounded" disabled>Ouvrir le booster</button>
+                </div>
+            </div>
+            <p id="message-ouverture" class="text-yellow-200 text-center mt-4"></p>
+        </section>
+
+        <section id="resultats" class="p-4" hidden>
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                <h2 class="text-2xl font-serif text-yellow-200">Vos cartes révélées</h2>
+                <p id="progression" class="text-gray-400"></p>
+            </div>
+            <p id="pack-resultat" class="text-gray-400 mb-4"></p>
+            <p id="message-rarete" class="text-yellow-200 font-bold mb-4"></p>
+            <div id="cartes-tirees" class="flex flex-wrap justify-center gap-4"></div>
+        </section>
+
+        <template id="modele-carte">
+            <article class="w-64 bg-gray-900 border border-yellow-800 rounded p-4">
+                <img class="image-carte w-full rounded" src="../images/cards/legendary/aurelion-dawnkeeper.png" alt="">
+                <h3 class="nom-carte text-xl font-serif text-yellow-200 mt-4 mb-2"></h3>
+                <p class="text-sm mb-4"><span class="type-carte"></span> · <span class="rarete-carte"></span></p>
+                <div class="flex flex-wrap justify-between gap-4 text-sm mb-4">
+                    <p>Coût : <span class="cout-carte"></span></p>
+                    <p>Puissance : <span class="puissance-carte"></span></p>
+                    <p>Vie : <span class="vie-carte"></span></p>
+                </div>
+                <p class="pouvoir-carte text-yellow-200 mb-2"></p>
+                <p class="description-carte text-gray-300"></p>
+            </article>
+        </template>
+        </main>
 
         <footer class="bg-gray-900 border-t border-yellow-700">
             <div class="flex flex-wrap items-center justify-between gap-5 p-4">
