@@ -144,4 +144,33 @@ function commander() {
 
 document.getElementById("acheter").onclick = commander;
 
+let modale = document.getElementById("modale-panier");
+
+function ouvrirPanier() {
+    if (!modale.open) {
+        modale.showModal();
+    }
+    document.body.classList.add("overflow-hidden");
+}
+
+function fermerPanier() {
+    modale.close();
+}
+
+document.getElementById("ouvrir-panier").onclick = ouvrirPanier;
+document.getElementById("fermer-panier").onclick = fermerPanier;
+document.getElementById("continuer-achats").onclick = fermerPanier;
+document.getElementById("fond-panier").onclick = fermerPanier;
+
+modale.addEventListener("cancel", function(e) {
+    e.preventDefault();
+    fermerPanier();
+});
+
+modale.addEventListener("close", function() {
+    if (!modale.open) {
+        document.body.classList.remove("overflow-hidden");
+    }
+});
+
 afficherPanier();
