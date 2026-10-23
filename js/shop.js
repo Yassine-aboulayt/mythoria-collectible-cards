@@ -7,7 +7,46 @@ let produits = [
 let panier = [];
 let total = 0;
 let liste = document.getElementById("panier");
+let modale = document.getElementById("modale-panier");
 
+produits.forEach(function(produit) {
+    let article = document.getElementById(produit.id);
+    let bouton = article.querySelector(".ajouter");
+    bouton.disabled = false;
+    bouton.onclick = function() {
+        ajouterProduit(produit.id);
+    };
+});
+
+function ajouterProduit(id) {
+    let article = document.getElementById(id);
+    let quantite = Number(article.querySelector(".quantite-produit").value);
+
+    if (quantite > 0 && quantite % 1 === 0) {
+        let produit = produits.find(function(item) {
+            return item.id === id;
+        });
+        let existe = panier.find(function(item) {
+            return item.id === id;
+        });
+
+        if (existe) {
+            existe.quantite = existe.quantite + quantite;
+        } else {
+            panier.push({
+                id: produit.id,
+                nom: produit.nom,
+                image: produit.image,
+                prix: produit.prix,
+                numero: produit.numero,
+                quantite: quantite
+            });
+        }
+        afficherPanier();
+    } else {
+        alert("Choisissez une quantité entière supérieure à zéro.");
+    }
+}
 
 function afficherPanier() {
     liste.innerHTML = "";
@@ -49,45 +88,6 @@ function afficherPanier() {
         document.getElementById("acheter").disabled = false;
         document.getElementById("acheter-vide").hidden = true;
         document.getElementById("vider-panier").disabled = false;
-    }
-}
-
-produits.forEach(function(produit) {
-    let article = document.getElementById(produit.id);
-    let bouton = article.querySelector(".ajouter");
-    bouton.disabled = false;
-    bouton.onclick = function() {
-        ajouterProduit(produit.id);
-    };
-});
-
-function ajouterProduit(id) {
-    let article = document.getElementById(id);
-    let quantite = Number(article.querySelector(".quantite-produit").value);
-
-    if (quantite > 0 && quantite % 1 === 0) {
-        let produit = produits.find(function(item) {
-            return item.id === id;
-        });
-        let existe = panier.find(function(item) {
-            return item.id === id;
-        });
-
-        if (existe) {
-            existe.quantite = existe.quantite + quantite;
-        } else {
-            panier.push({
-                id: produit.id,
-                nom: produit.nom,
-                image: produit.image,
-                prix: produit.prix,
-                numero: produit.numero,
-                quantite: quantite
-            });
-        }
-        afficherPanier();
-    } else {
-        alert("Choisissez une quantité entière supérieure à zéro.");
     }
 }
 
@@ -133,18 +133,29 @@ function viderPanier() {
     afficherPanier();
 }
 
-document.getElementById("vider-panier").onclick = viderPanier;
-
 function commander() {
     if (panier.length > 0) {
-        alert("Commande confirmée !");
-        viderPanier();
+        let partie = chargerPartie();
+        if (partie === null) {
+            alert("Impossible de lire la sauvegarde. Votre panier reste disponible.");
+            return;
+        }
+
+        for (let i = 0; i < panier.length; i++) {
+            let produit = panier[i];
+            partie.boosters[produit.numero] = partie.boosters[produit.numero] + produit.quantite;
+        }
+
+        if (sauvegarderPartie(partie)) {
+            viderPanier();
+            document.getElementById("message").textContent = "Vos boosters sont disponibles dans la page Ouverture.";
+            document.getElementById("commande-prete").hidden = false;
+            alert("Commande confirmée !");
+        } else {
+            alert("Impossible d’enregistrer votre achat. Votre panier n’a pas été vidé.");
+        }
     }
 }
-
-document.getElementById("acheter").onclick = commander;
-
-let modale = document.getElementById("modale-panier");
 
 function ouvrirPanier() {
     if (!modale.open) {
@@ -157,6 +168,8 @@ function fermerPanier() {
     modale.close();
 }
 
+document.getElementById("acheter").onclick = commander;
+document.getElementById("vider-panier").onclick = viderPanier;
 document.getElementById("ouvrir-panier").onclick = ouvrirPanier;
 document.getElementById("fermer-panier").onclick = fermerPanier;
 document.getElementById("continuer-achats").onclick = fermerPanier;
