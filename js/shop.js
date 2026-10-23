@@ -7,15 +7,18 @@ let produits = [
 let panier = [0, 0, 0, 0];
 let total = 0;
 let liste = document.getElementById("panier");
+let modale = document.getElementById("modale-panier");
 
-// Affiche les produits et recalcule le total.
+// on refait la liste du panier
 function afficherPanier() {
     let contenu = "";
     total = 0;
     for (let i = 0; i < produits.length; i++) {
         let article = document.getElementById(produits[i].id);
-        article.getElementsByClassName("ajouter")[0].disabled = false;
-        article.getElementsByClassName("ajouter")[0].onclick = function() { ajouterProduit(i); };
+        article.querySelector(".ajouter").disabled = false;
+        article.querySelector(".ajouter").onclick = function() {
+            ajouterProduit(i);
+        };
         if (panier[i] > 0) {
             contenu = contenu + document.getElementById("modele-panier").innerHTML;
             total = total + produits[i].prix * panier[i];
@@ -26,9 +29,13 @@ function afficherPanier() {
     for (let i = 0; i < produits.length; i++) {
         if (panier[i] > 0) {
             let ligne = liste.children[numero];
-            let champ = ligne.getElementsByClassName("quantite-panier")[0];
-            ligne.getElementsByClassName("nom-panier")[0].textContent = produits[i].nom;
-            ligne.getElementsByClassName("prix-panier")[0].textContent = (produits[i].prix * panier[i]) + " MAD";
+            let champ = ligne.querySelector(".quantite-panier");
+            let image = ligne.querySelector(".image-panier");
+            image.src = document.getElementById(produits[i].id).querySelector("img").src;
+            image.alt = produits[i].nom;
+            ligne.querySelector(".prix-unitaire").textContent = produits[i].prix + " MAD";
+            ligne.querySelector(".nom-panier").textContent = produits[i].nom;
+            ligne.querySelector(".prix-panier").textContent = (produits[i].prix * panier[i]) + " MAD";
             champ.value = panier[i];
             champ.onchange = function() {
                 let quantite = champ.value * 1;
@@ -37,34 +44,48 @@ function afficherPanier() {
                 } else {
                     alert("Choisissez une quantité entière supérieure à zéro.");
                 }
-                // Garde les boutons en place quand la quantité change.
                 champ.value = panier[i];
-                ligne.getElementsByClassName("prix-panier")[0].textContent = produits[i].prix * panier[i] + " MAD";
+                ligne.querySelector(".prix-panier").textContent = produits[i].prix * panier[i] + " MAD";
                 total = 0;
                 for (let j = 0; j < produits.length; j++) {
                     total = total + produits[j].prix * panier[j];
                 }
                 document.getElementById("total").textContent = total;
             };
-            ligne.getElementsByClassName("plus")[0].onclick = function() { panier[i] = panier[i] + 1; afficherPanier(); };
-            ligne.getElementsByClassName("moins")[0].onclick = function() { panier[i] = panier[i] - 1; afficherPanier(); };
-            ligne.getElementsByClassName("supprimer")[0].onclick = function() { panier[i] = 0; afficherPanier(); };
+            ligne.querySelector(".plus").onclick = function() {
+                panier[i] = panier[i] + 1;
+                afficherPanier();
+            };
+            ligne.querySelector(".moins").onclick = function() {
+                panier[i] = panier[i] - 1;
+                afficherPanier();
+            };
+            ligne.querySelector(".supprimer").onclick = function() {
+                panier[i] = 0;
+                afficherPanier();
+            };
             numero = numero + 1;
         }
     }
     document.getElementById("total").textContent = total;
-    let vide = total === 0;
-    document.getElementById("vide").hidden = !vide;
-    document.getElementById("acheter").hidden = vide;
-    document.getElementById("acheter").disabled = vide;
-    document.getElementById("acheter-vide").hidden = !vide;
-    document.getElementById("vider-panier").disabled = vide;
+    if (total === 0) {
+        document.getElementById("vide").hidden = false;
+        document.getElementById("acheter").hidden = true;
+        document.getElementById("acheter").disabled = true;
+        document.getElementById("acheter-vide").hidden = false;
+        document.getElementById("vider-panier").disabled = true;
+    } else {
+        document.getElementById("vide").hidden = true;
+        document.getElementById("acheter").hidden = false;
+        document.getElementById("acheter").disabled = false;
+        document.getElementById("acheter-vide").hidden = true;
+        document.getElementById("vider-panier").disabled = false;
+    }
 }
 
-// Ajoute la quantité choisie au panier.
 function ajouterProduit(indice) {
     let article = document.getElementById(produits[indice].id);
-    let quantite = article.getElementsByClassName("quantite-produit")[0].value * 1;
+    let quantite = article.querySelector(".quantite-produit").value * 1;
     if (quantite > 0 && quantite % 1 === 0) {
         panier[indice] = panier[indice] + quantite;
         afficherPanier();
@@ -73,16 +94,45 @@ function ajouterProduit(indice) {
     }
 }
 
-// Remet les quantités à zéro.
 function viderPanier() {
-    for (let i = 0; i < panier.length; i++) { panier[i] = 0; }
+    for (let i = 0; i < panier.length; i++) {
+        panier[i] = 0;
+    }
     afficherPanier();
 }
 
-// Confirme la commande et vide le panier.
+// les boosters achetés vont dans la sauvegarde
 function commander() {
     if (total > 0) { alert("Commande confirmée !"); viderPanier(); }
 }
 document.getElementById("acheter").onclick = commander;
 document.getElementById("vider-panier").onclick = viderPanier;
+
+function ouvrirPanier() {
+    if (!modale.open) {
+        modale.showModal();
+    }
+    document.body.classList.add("overflow-hidden");
+}
+
+function fermerPanier() {
+    modale.close();
+}
+
+document.getElementById("ouvrir-panier").onclick = ouvrirPanier;
+document.getElementById("fermer-panier").onclick = fermerPanier;
+document.getElementById("continuer-achats").onclick = fermerPanier;
+document.getElementById("fond-panier").onclick = fermerPanier;
+
+modale.addEventListener("cancel", function(e) {
+    e.preventDefault();
+    fermerPanier();
+});
+
+modale.addEventListener("close", function() {
+    if (!modale.open) {
+        document.body.classList.remove("overflow-hidden");
+    }
+});
+
 afficherPanier();
