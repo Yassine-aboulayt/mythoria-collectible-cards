@@ -7,6 +7,7 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
         <link rel="stylesheet" href="style.css" />
+        <script src="../js/data.js" defer></script>
     </head>
     <body class="bg-gray-900 text-white min-h-screen flex flex-col">
         <header class="bg-gray-900 border-b border-yellow-700">
@@ -25,7 +26,62 @@
             </div>
         </header>
 
-        <main class="flex-1" id="main"></main>
+        <main class="flex-1 bg-gray-900">
+            <section class="p-4 text-center">
+                <h1 class="text-3xl text-yellow-200 mb-2">Mon Grimoire</h1>
+                <p>Cartes possédées : <span id="total-cartes">0</span></p>
+                <a href="opening.html" class="text-yellow-200 underline">Ouvrir mes boosters</a>
+            </section>
+
+            <div class="grimoire bg-cover bg-center max-w-5xl mx-auto p-8 md:px-36 md:py-24">
+                <div class="flex flex-col md:flex-row gap-8 md:gap-24 text-gray-900">
+                    <section class="flex-1 min-w-0 h-96 overflow-y-auto p-2">
+                        <h2 class="text-xl font-serif font-bold text-center mb-4">Mes cartes</h2>
+                        <select id="rarete" class="w-full bg-yellow-100 border border-yellow-800 p-2 rounded mb-4">
+                            <option value="">Toutes les raretés</option>
+                            <option value="Commune">Commune</option>
+                            <option value="Rare">Rare</option>
+                            <option value="Épique">Épique</option>
+                            <option value="Légendaire">Légendaire</option>
+                        </select>
+
+                        <p id="vide" class="text-center mb-4"></p>
+                        <div id="liste-cartes" class="flex flex-wrap justify-center gap-2"></div>
+                    </section>
+
+                    <section class="flex-1 min-w-0 h-96 overflow-y-auto p-2 text-center">
+                        <p id="choisir-carte" class="mt-8">Choisissez une carte sur la page de gauche.</p>
+
+                        <article id="details" hidden>
+                            <h2 id="nom-details" class="text-2xl font-serif font-bold mb-4"></h2>
+                            <img id="image-details" src="../images/cards/legendary/aurelion-dawnkeeper.png" alt="" class="w-40 mx-auto rounded mb-4">
+                            <p id="type-details" class="mb-2"></p>
+                            <p id="rarete-details" class="mb-2"></p>
+                            <p id="quantite-details" class="mb-2"></p>
+                            <p id="cout-details" class="mb-2"></p>
+
+                            <div id="statistiques" class="mb-4">
+                                <p id="puissance-details"></p>
+                                <p id="vie-details"></p>
+                            </div>
+
+                            <p id="pouvoir-details" class="font-bold mb-2"></p>
+                            <p id="description-details" class="mb-4"></p>
+                            <button id="fermer" type="button" class="bg-purple-900 text-white p-2 rounded">Fermer</button>
+                        </article>
+                    </section>
+                </div>
+            </div>
+
+            <template id="modele-collection">
+                <button type="button" class="w-20 text-center rounded hover:bg-yellow-200 p-1">
+                    <img class="image-carte w-full rounded" src="../images/cards/legendary/aurelion-dawnkeeper.png" alt="">
+                    <p class="nom-carte text-xs mt-1"></p>
+                    <p class="text-xs">× <span class="quantite-carte"></span></p>
+                </button>
+            </template>
+        </main>
+
 
         <footer class="bg-gray-900 border-t border-yellow-700">
             <div class="flex flex-wrap items-center justify-between gap-5 p-4">
