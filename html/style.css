@@ -5,11 +5,14 @@
 .boutique {
     background-image: url('../images/backgrounds/shop-bg.png');
 }
-
 .ouverture {
     background-image: url('../images/backgrounds/opening-bg.png');
 }
 
 .grimoire {
     background-image: url('../images/backgrounds/grimoire-book.png');
+}
+
+.deck {
+    background-image: url('../images/backgrounds/deck-bg.png');
 }
