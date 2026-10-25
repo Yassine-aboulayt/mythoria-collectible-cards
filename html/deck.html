@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
         <link rel="stylesheet" href="style.css" />
         <script src="../js/data.js" defer></script>
+        <script src="../js/deck.js" defer></script>
     </head>
     <body class="bg-gray-900 text-white min-h-screen flex flex-col">
         <header class="bg-gray-900 border-b border-yellow-700">
@@ -67,26 +68,7 @@
                 </div>
             </section>
 
-            <template id="modele-carte">
-                <article class="w-40 bg-gray-900 border border-yellow-800 rounded p-4 text-center">
-                    <img class="image-carte w-full rounded mb-2" src="../images/cards/legendary/aurelion-dawnkeeper.png" alt="">
-                    <h3 class="nom-carte text-yellow-200 font-bold mb-2"></h3>
-                    <p class="infos-carte text-sm text-gray-300 mb-2"></p>
-                <p class="mb-2">Coût : <span class="cout-carte"></span></p>
-                    <button type="button" class="ajouter w-full bg-purple-900 hover:bg-purple-800 p-2 rounded">Ajouter</button>
-                </article>
-            </template>
 
-            <template id="modele-deck">
-                <article class="flex items-center gap-2 border-b border-yellow-800 pb-4">
-                    <img class="image-carte w-12 rounded" src="../images/cards/legendary/aurelion-dawnkeeper.png" alt="">
-                    <div class="flex-1">
-                        <h3 class="nom-carte text-yellow-200"></h3>
-                        <p class="text-sm">Coût : <span class="cout-carte"></span></p>
-                    </div>
-                    <button type="button" class="retirer bg-purple-900 hover:bg-purple-800 p-2 rounded">Retirer</button>
-                </article>
-            </template>
         </main>
 
 
