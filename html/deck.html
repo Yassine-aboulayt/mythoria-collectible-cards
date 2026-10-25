@@ -7,6 +7,7 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
         <link rel="stylesheet" href="style.css" />
+        <script src="../js/data.js" defer></script>
     </head>
     <body class="bg-gray-900 text-white min-h-screen flex flex-col">
         <header class="bg-gray-900 border-b border-yellow-700">
@@ -25,7 +26,69 @@
             </div>
         </header>
 
-        <main class="flex-1" id="main"></main>
+        <main class="flex-1" id="main">
+            <section class="deck bg-cover bg-center p-4 text-center">
+                <h1 class="text-3xl font-serif text-yellow-200 mb-4">Mon jeu</h1>
+                <p class="mb-2">Choisissez jusqu’à 20 cartes de votre collection.</p>
+                <p class="text-gray-300">Une seule copie de chaque carte dans le jeu.</p>
+            </section>
+
+            <section class="bg-gray-800 p-4">
+                <h2 class="text-2xl font-serif text-yellow-200 mb-4">Mes cartes disponibles</h2>
+                <div class="flex flex-wrap gap-4 mb-4">
+                    <select id="rarete" class="bg-gray-900 border border-yellow-800 rounded p-2">
+                        <option value="">Toutes les raretés</option>
+                        <option value="Commune">Commune</option>
+                        <option value="Rare">Rare</option>
+                        <option value="Épique">Épique</option>
+                        <option value="Légendaire">Légendaire</option>
+                    </select>
+                </div>
+                <p id="collection-vide" class="text-gray-300 mb-4"></p>
+                <div id="liste-cartes" class="flex flex-wrap justify-center gap-4"></div>
+                <a href="grimoire.html" class="text-yellow-200 underline">Voir mon grimoire</a>
+            </section>
+
+            <section class="bg-gray-900 p-4">
+                <h2 class="text-2xl font-serif text-yellow-200 mb-2">Mon jeu : <span id="nombre-cartes">0</span> / 20</h2>
+                <p id="jeu-vide" class="text-gray-400 mb-4">Votre jeu est vide.</p>
+                <div id="liste-deck" class="flex flex-col gap-4 mb-4"></div>
+                <button id="vider" type="button" class="bg-purple-900 hover:bg-purple-800 p-2 rounded" disabled>Vider mon jeu</button>
+                <p id="message" class="text-yellow-200 mt-4"></p>
+                <h3 class="text-xl text-yellow-200 mt-4 mb-2">Statistiques</h3>
+                <p>Coût moyen : <span id="cout-moyen">0</span></p>
+                <p>Attaque des créatures : <span id="attaque">0</span></p>
+                <p>Vie des créatures : <span id="vie">0</span></p>
+                <div class="flex flex-wrap gap-4 mt-4 text-gray-300">
+                    <p>Lumière : <span id="nombre-lumiere">0</span></p>
+                    <p>Ténèbres : <span id="nombre-tenebres">0</span></p>
+                    <p>Créatures : <span id="nombre-creatures">0</span></p>
+                    <p>Sorts : <span id="nombre-sorts">0</span></p>
+                </div>
+            </section>
+
+            <template id="modele-carte">
+                <article class="w-40 bg-gray-900 border border-yellow-800 rounded p-4 text-center">
+                    <img class="image-carte w-full rounded mb-2" src="../images/cards/legendary/aurelion-dawnkeeper.png" alt="">
+                    <h3 class="nom-carte text-yellow-200 font-bold mb-2"></h3>
+                    <p class="infos-carte text-sm text-gray-300 mb-2"></p>
+                <p class="mb-2">Coût : <span class="cout-carte"></span></p>
+                    <button type="button" class="ajouter w-full bg-purple-900 hover:bg-purple-800 p-2 rounded">Ajouter</button>
+                </article>
+            </template>
+
+            <template id="modele-deck">
+                <article class="flex items-center gap-2 border-b border-yellow-800 pb-4">
+                    <img class="image-carte w-12 rounded" src="../images/cards/legendary/aurelion-dawnkeeper.png" alt="">
+                    <div class="flex-1">
+                        <h3 class="nom-carte text-yellow-200"></h3>
+                        <p class="text-sm">Coût : <span class="cout-carte"></span></p>
+                    </div>
+                    <button type="button" class="retirer bg-purple-900 hover:bg-purple-800 p-2 rounded">Retirer</button>
+                </article>
+            </template>
+        </main>
+
 
         <footer class="bg-gray-900 border-t border-yellow-700">
             <div class="flex flex-wrap items-center justify-between gap-5 p-4">
