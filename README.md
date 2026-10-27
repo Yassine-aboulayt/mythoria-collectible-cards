@@ -7,7 +7,7 @@ Il contient cinq pages : Accueil, Boutique, Ouverture, Grimoire et Mon jeu.
 
 ## Liens
 
-- [Voir le site](https://mythoria-collectible-cards-wbbj.vercel.app)
+- [Voir le site de la partie 1](https://mythoria-collectible-cards.vercel.app/)
 - [Voir le code sur GitHub](https://github.com/Yassine-aboulayt/mythoria-collectible-cards/tree/partie-1)
 
 ## Outils utilisés
