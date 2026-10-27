@@ -1,4 +1,6 @@
-# MYTHORIA
+# MYTHORIA — Partie 1
+
+Cette branche contient la première partie du projet, avec les cinq pages de collection. Le projet complet se trouve sur [main](https://github.com/Yassine-aboulayt/mythoria-collectible-cards/tree/main).
 
 Mythoria est un projet de site sur un jeu de cartes fantastique.
 Il contient cinq pages : Accueil, Boutique, Ouverture, Grimoire et Mon jeu.
@@ -6,7 +8,7 @@ Il contient cinq pages : Accueil, Boutique, Ouverture, Grimoire et Mon jeu.
 ## Liens
 
 - [Voir le site](https://mythoria-collectible-cards-wbbj.vercel.app)
-- [Voir le code sur GitHub](https://github.com/Yassine-aboulayt/mythoria-collectible-cards)
+- [Voir le code sur GitHub](https://github.com/Yassine-aboulayt/mythoria-collectible-cards/tree/partie-1)
 
 ## Outils utilisés
 
