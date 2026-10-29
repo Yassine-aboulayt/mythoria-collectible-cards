@@ -10,6 +10,33 @@
     <body class="bg-gray-900 text-white">
         <main class="max-w-6xl mx-auto p-4">
             <h1 class="text-3xl font-serif text-yellow-200 mb-4">MYTHORIA — Arène</h1>
+
+            <div class="flex flex-wrap justify-between gap-4 mb-4">
+                <p>Tour 1 · À vous de jouer</p>
+                <p>Deck : 15 cartes</p>
+            </div>
+
+            <div class="arena rounded p-4 md:p-8">
+                <div class="flex gap-4">
+                    <div class="flex-1 min-w-0">
+                        <div id="main-adversaire" class="flex justify-center gap-2 h-20 md:h-24 mb-4">
+                            <div class="w-1/6">
+                                <img src="assets/images/card-back-transparent.png" alt="Carte face cachée" class="w-full h-full object-contain">
+                            </div>
+                            <div class="w-1/6">
+                                <img src="assets/images/card-back-transparent.png" alt="Carte face cachée" class="w-full h-full object-contain">
+                            </div>
+                            <div class="w-1/6">
+                                <img src="assets/images/card-back-transparent.png" alt="Carte face cachée" class="w-full h-full object-contain">
+                            </div>
+                            <div class="w-1/6">
+                                <img src="assets/images/card-back-transparent.png" alt="Carte face cachée" class="w-full h-full object-contain">
+                            </div>
+                            <div class="w-1/6">
+                                <img src="assets/images/card-back-transparent.png" alt="Carte face cachée" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
                         <section id="terrain-adversaire">
                             <div class="flex gap-2 h-16 md:h-24 mb-2">
                                 <div class="flex-1 border border-yellow-800 rounded"></div>
@@ -46,7 +73,36 @@
                             </div>
                         </section>
 
-
+                        <div id="main-joueur" class="flex justify-center gap-2 mb-4">
+                            <article class="w-1/6 text-center text-xs">
+                                <img src="assets/images/cards/legendary/aurelion-dawnkeeper.png" alt="Aurélion, Gardien de l’Aube" class="w-full rounded mb-1">
+                                <h3 class="text-yellow-200">Aurélion, Gardien de l’Aube</h3>
+                                <p>ATK 8 · VIE 10</p>
+                            </article>
+                            <article class="w-1/6 text-center text-xs">
+                                <img src="assets/images/cards/legendary/nyxara-veilweaver.png" alt="Nyxara, Tisseuse du Voile" class="w-full rounded mb-1">
+                                <h3 class="text-yellow-200">Nyxara, Tisseuse du Voile</h3>
+                                <p>ATK 9 · VIE 6</p>
+                            </article>
+                            <article class="w-1/6 text-center text-xs">
+                                <img src="assets/images/cards/legendary/thorne-ancient-warden.png" alt="Thorne, Gardien Ancestral" class="w-full rounded mb-1">
+                                <h3 class="text-yellow-200">Thorne, Gardien Ancestral</h3>
+                                <p>ATK 6 · VIE 12</p>
+                            </article>
+                            <article class="w-1/6 text-center text-xs">
+                                <img src="assets/images/cards/legendary/celestial-convergence.png" alt="Convergence Céleste" class="w-full rounded mb-1">
+                                <h3 class="text-yellow-200">Convergence Céleste</h3>
+                                <p>ATK 6 · VIE 0</p>
+                            </article>
+                            <article class="w-1/6 text-center text-xs">
+                                <img src="assets/images/cards/common/solar-page.png" alt="Page du Soleil" class="w-full rounded mb-1">
+                                <h3 class="text-yellow-200">Page du Soleil</h3>
+                                <p>ATK 1 · VIE 3</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </body>
 </html>
