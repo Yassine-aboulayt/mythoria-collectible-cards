@@ -28,5 +28,12 @@
       "source": "/style.css",
       "destination": "/html/style.css"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/arena.html",
+      "destination": "/mythoria-partie2/arena.html",
+      "permanent": false
+    }
   ]
 }
