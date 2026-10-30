@@ -1,4 +1,4 @@
-body { background: #111827; }
+body { background: #111827 url("../images/fond-arene.png") center / cover fixed; }
 [hidden] { display: none !important; }
 .panneau { background: #181428; border: 1px solid #64516d; border-radius: .5rem; }
 .plateau { flex: 1; min-width: 0; }
