@@ -6,7 +6,7 @@ Mythoria est un jeu de cartes fantasy. Cette deuxième partie prépare une arèn
 
 La page contient le terrain adverse en haut, le terrain du joueur en bas, dix emplacements pour chaque camp, deux mains de cinq cartes et les decks à droite.
 
-On voit les camps, les 3 000 HP, le tour et un court historique. Le fond reprend les couleurs bleu nuit, or et violet de Mythoria.
+On voit les camps, les 3 000 HP, le tour et un court historique. Le fond reprend les couleurs bleu nuit, or et violet de Mythoria. Il garde seulement les deux cadres des decks à droite. Les emplacements du terrain et les PV sont présentés en HTML avec Tailwind.
 
 C’est une maquette en HTML et Tailwind, sans JavaScript. Les boutons Piocher et Fin de tour sont désactivés. Les valeurs affichées sont des exemples.
 
@@ -49,3 +49,9 @@ Chaque grande tâche est une user story avec une date et ses sous-tâches, comme
 Le second livrable ajoutera JavaScript : lancer de pièce, choix du camp, pioche, invocation, attaques, pénalité de 20 % hors camp, adversaire automatique et LocalStorage. Le déploiement Vercel est prévu dans la suite du planning.
 
 [Dépôt GitHub](https://github.com/Yassine-aboulayt/mythoria-collectible-cards-2)
+
+## Vérifications du premier livrable
+
+Les images et les chemins locaux ont été vérifiés. Les deux terrains contiennent dix emplacements chacun. Le rendu a été contrôlé sur ordinateur et sur un écran mobile de 390 pixels. La page ne charge aucun script.
+
+Les autres navigateurs, le combat et la publication Vercel seront vérifiés pendant la suite du projet.
