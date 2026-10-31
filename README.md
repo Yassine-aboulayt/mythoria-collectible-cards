@@ -44,10 +44,6 @@ Chaque grande tâche est une user story avec une date et ses sous-tâches, comme
 | 04/11 | Tester et préparer la publication sur Vercel. |
 | 05/11 avant 11 h 59 | Remettre le jeu et préparer la présentation. |
 
-## Suite du brief
-
-Le second livrable ajoutera JavaScript : lancer de pièce, choix du camp, pioche, invocation, attaques, pénalité de 20 % hors camp, adversaire automatique et LocalStorage. Le déploiement Vercel est prévu dans la suite du planning.
-
 [Dépôt GitHub](https://github.com/Yassine-aboulayt/mythoria-collectible-cards-2)
 
 ## Vérifications du premier livrable
