@@ -1,0 +1,306 @@
+[
+    {
+        "id": "aurelion-dawnkeeper",
+        "nom": "Aurélion, Gardien de l’Aube",
+        "attaque": 800,
+        "defense": 500,
+        "camp": "Lumière",
+        "image": "assets/images/aurelion-dawnkeeper.jpg"
+    },
+    {
+        "id": "nyxara-veilweaver",
+        "nom": "Nyxara, Tisseuse du Voile",
+        "attaque": 900,
+        "defense": 300,
+        "camp": "Ténèbres",
+        "image": "assets/images/nyxara-veilweaver.jpg"
+    },
+    {
+        "id": "thorne-ancient-warden",
+        "nom": "Thorne, Gardien Ancestral",
+        "attaque": 600,
+        "defense": 600,
+        "camp": "Lumière",
+        "image": "assets/images/thorne-ancient-warden.jpg"
+    },
+    {
+        "id": "solar-page",
+        "nom": "Page du Soleil",
+        "attaque": 100,
+        "defense": 150,
+        "camp": "Lumière",
+        "image": "assets/images/solar-page.jpg"
+    },
+    {
+        "id": "bell-tender",
+        "nom": "Gardienne des Cloches",
+        "attaque": 200,
+        "defense": 200,
+        "camp": "Lumière",
+        "image": "assets/images/bell-tender.jpg"
+    },
+    {
+        "id": "veil-cat",
+        "nom": "Chat du Voile",
+        "attaque": 100,
+        "defense": 100,
+        "camp": "Ténèbres",
+        "image": "assets/images/veil-cat.jpg"
+    },
+    {
+        "id": "ash-imp",
+        "nom": "Diablotin de Cendre",
+        "attaque": 300,
+        "defense": 100,
+        "camp": "Ténèbres",
+        "image": "assets/images/ash-imp.jpg"
+    },
+    {
+        "id": "twilight-apprentice",
+        "nom": "Apprenti du Crépuscule",
+        "attaque": 200,
+        "defense": 200,
+        "camp": "Ténèbres",
+        "image": "assets/images/twilight-apprentice.jpg"
+    },
+    {
+        "id": "sunwell-dove",
+        "nom": "Colombe du Puits Solaire",
+        "attaque": 100,
+        "defense": 100,
+        "camp": "Lumière",
+        "image": "assets/images/sunwell-dove.jpg"
+    },
+    {
+        "id": "prism-lamplighter",
+        "nom": "Allumeur de Prismes",
+        "attaque": 200,
+        "defense": 150,
+        "camp": "Lumière",
+        "image": "assets/images/prism-lamplighter.jpg"
+    },
+    {
+        "id": "chapel-sentry",
+        "nom": "Veilleur de la Chapelle",
+        "attaque": 200,
+        "defense": 250,
+        "camp": "Lumière",
+        "image": "assets/images/chapel-sentry.jpg"
+    },
+    {
+        "id": "mist-moth",
+        "nom": "Phalène de Brume",
+        "attaque": 100,
+        "defense": 100,
+        "camp": "Ténèbres",
+        "image": "assets/images/mist-moth.jpg"
+    },
+    {
+        "id": "crypt-messenger",
+        "nom": "Messager des Cryptes",
+        "attaque": 200,
+        "defense": 150,
+        "camp": "Ténèbres",
+        "image": "assets/images/crypt-messenger.jpg"
+    },
+    {
+        "id": "fern-turtle",
+        "nom": "Tortue des Fougères",
+        "attaque": 100,
+        "defense": 250,
+        "camp": "Ténèbres",
+        "image": "assets/images/fern-turtle.jpg"
+    },
+    {
+        "id": "copper-antler-hare",
+        "nom": "Lièvre aux Bois Cuivrés",
+        "attaque": 200,
+        "defense": 50,
+        "camp": "Lumière",
+        "image": "assets/images/copper-antler-hare.jpg"
+    },
+    {
+        "id": "brook-salamander",
+        "nom": "Salamandre du Ruisseau",
+        "attaque": 200,
+        "defense": 150,
+        "camp": "Ténèbres",
+        "image": "assets/images/brook-salamander.jpg"
+    },
+    {
+        "id": "dawn-messenger",
+        "nom": "Messagère du Matin",
+        "attaque": 200,
+        "defense": 150,
+        "camp": "Lumière",
+        "image": "assets/images/dawn-messenger.jpg"
+    },
+    {
+        "id": "ink-moth",
+        "nom": "Papillon d’Encre",
+        "attaque": 100,
+        "defense": 100,
+        "camp": "Ténèbres",
+        "image": "assets/images/ink-moth.jpg"
+    },
+    {
+        "id": "dew-turtle",
+        "nom": "Tortue de Rosée",
+        "attaque": 100,
+        "defense": 250,
+        "camp": "Lumière",
+        "image": "assets/images/dew-turtle.jpg"
+    },
+    {
+        "id": "fern-hare",
+        "nom": "Lièvre des Fougères",
+        "attaque": 200,
+        "defense": 50,
+        "camp": "Ténèbres",
+        "image": "assets/images/fern-hare.jpg"
+    },
+    {
+        "id": "radiant-cartographer",
+        "nom": "Cartographe Radieuse",
+        "attaque": 300,
+        "defense": 250,
+        "camp": "Lumière",
+        "image": "assets/images/radiant-cartographer.jpg"
+    },
+    {
+        "id": "prism-lancer",
+        "nom": "Lancier du Prisme",
+        "attaque": 400,
+        "defense": 250,
+        "camp": "Lumière",
+        "image": "assets/images/prism-lancer.jpg"
+    },
+    {
+        "id": "chain-specter",
+        "nom": "Spectre aux Chaînes",
+        "attaque": 300,
+        "defense": 250,
+        "camp": "Ténèbres",
+        "image": "assets/images/chain-specter.jpg"
+    },
+    {
+        "id": "mirror-duelist",
+        "nom": "Duelliste des Miroirs",
+        "attaque": 500,
+        "defense": 200,
+        "camp": "Ténèbres",
+        "image": "assets/images/mirror-duelist.jpg"
+    },
+    {
+        "id": "storm-antler-elk",
+        "nom": "Élan des Orages",
+        "attaque": 500,
+        "defense": 300,
+        "camp": "Lumière",
+        "image": "assets/images/storm-antler-elk.jpg"
+    },
+    {
+        "id": "coral-basilisk",
+        "nom": "Basilic de Corail",
+        "attaque": 400,
+        "defense": 250,
+        "camp": "Ténèbres",
+        "image": "assets/images/coral-basilisk.jpg"
+    },
+    {
+        "id": "embermane-lynx",
+        "nom": "Lynx à Crinière de Feu",
+        "attaque": 400,
+        "defense": 150,
+        "camp": "Lumière",
+        "image": "assets/images/embermane-lynx.jpg"
+    },
+    {
+        "id": "storm-blade",
+        "nom": "Lamier de l’Orage",
+        "attaque": 400,
+        "defense": 250,
+        "camp": "Lumière",
+        "image": "assets/images/storm-blade.jpg"
+    },
+    {
+        "id": "frost-shade",
+        "nom": "Spectre du Givre",
+        "attaque": 300,
+        "defense": 250,
+        "camp": "Ténèbres",
+        "image": "assets/images/frost-shade.jpg"
+    },
+    {
+        "id": "iron-shell-tortoise",
+        "nom": "Tortue de Fer",
+        "attaque": 200,
+        "defense": 350,
+        "camp": "Ténèbres",
+        "image": "assets/images/iron-shell-tortoise.jpg"
+    },
+    {
+        "id": "royal-sun-lion",
+        "nom": "Lion du Zénith",
+        "attaque": 600,
+        "defense": 350,
+        "camp": "Lumière",
+        "image": "assets/images/royal-sun-lion.jpg"
+    },
+    {
+        "id": "royal-prism-mage",
+        "nom": "Archimage du Prisme",
+        "attaque": 400,
+        "defense": 350,
+        "camp": "Lumière",
+        "image": "assets/images/royal-prism-mage.jpg"
+    },
+    {
+        "id": "royal-halo-swan",
+        "nom": "Cygne des Auréoles",
+        "attaque": 400,
+        "defense": 300,
+        "camp": "Lumière",
+        "image": "assets/images/royal-halo-swan.jpg"
+    },
+    {
+        "id": "mythic-mirror-duchess",
+        "nom": "Duchesse des Miroirs",
+        "attaque": 500,
+        "defense": 300,
+        "camp": "Ténèbres",
+        "image": "assets/images/mythic-mirror-duchess.jpg"
+    },
+    {
+        "id": "mythic-void-manta",
+        "nom": "Raie du Vide",
+        "attaque": 700,
+        "defense": 350,
+        "camp": "Ténèbres",
+        "image": "assets/images/mythic-void-manta.jpg"
+    },
+    {
+        "id": "ancient-amber-basilisk",
+        "nom": "Basilic d’Ambre",
+        "attaque": 500,
+        "defense": 400,
+        "camp": "Lumière",
+        "image": "assets/images/ancient-amber-basilisk.jpg"
+    },
+    {
+        "id": "ancient-cloud-whale",
+        "nom": "Baleine des Nuages",
+        "attaque": 500,
+        "defense": 500,
+        "camp": "Ténèbres",
+        "image": "assets/images/ancient-cloud-whale.jpg"
+    },
+    {
+        "id": "ancient-ruby-scorpion",
+        "nom": "Scorpion de Rubis",
+        "attaque": 600,
+        "defense": 250,
+        "camp": "Lumière",
+        "image": "assets/images/ancient-ruby-scorpion.jpg"
+    }
+]
