@@ -1,0 +1,112 @@
+import {chargerCartes, creerCamp, DECK_SIZE, lireDeck, poser, piocher, TAILLE_MAIN} from "./cards.js";
+import {addItem, loadItems} from "./state.js";
+import {choisirCamps, lancerPiece} from "./turns.js";
+import {clearForm, element, render} from "./ui.js";
+import {formatDate, hasard} from "./utils.js";
+
+let partie;
+let catalogue = [];
+
+// Écrit le message de l’action et met à jour le plateau.
+function noter(texte) {
+    addItem(partie.historique, formatDate(new Date()) + " · " + texte);
+    element("message").textContent = texte;
+    render(partie, jouerCarte, null);
+}
+
+// Mélange les decks et présente le résultat du lancer.
+function nouvellePartie() {
+    partie = null;
+    const deck = lireDeck(loadItems("mythoria_deck"));
+    const taille = DECK_SIZE + TAILLE_MAIN;
+    element("intro").hidden = false;
+    element("jeu").hidden = true;
+    element("fin").hidden = true;
+    if (deck.length < taille) {
+        element("message-intro").textContent = "Ajoutez " + taille + " créatures dans Mon jeu pour combattre (" + deck.length + " disponibles).";
+        return;
+    }
+    partie = {joueur: creerCamp(deck), adversaire: creerCamp(catalogue), actif: lancerPiece(),
+        tour: 1, role: "", historique: [], commence: false, fin: false};
+    afficherLancer();
+}
+
+// Propose le choix du camp au vainqueur du lancer.
+function afficherLancer() {
+    clearForm(element("camps"));
+    const gagne = partie.actif === "joueur";
+    element("preparer").hidden = true;
+    element("camps").hidden = !gagne;
+    element("entrer").hidden = gagne;
+    if (gagne) {
+        element("tirage").textContent = "Pile · Vous avez gagné le lancer !";
+        element("message-intro").textContent = "Choisissez votre camp pour commencer.";
+    } else {
+        choisirCamps(partie, hasard(2) === 0 ? "Lumière" : "Ténèbres");
+        element("tirage").textContent = "Face · Vous avez perdu le lancer !";
+        element("message-intro").textContent = "L’adversaire choisit " + partie.adversaire.nom + ". Vous jouez pour " + partie.joueur.nom + ".";
+    }
+}
+
+// Ouvre le terrain après le choix des camps.
+function commencer(camp) {
+    if (!partie || partie.commence) return;
+    if (partie.actif === "joueur" && !camp) return;
+    if (partie.actif === "adversaire" && camp) return;
+    if (camp) choisirCamps(partie, camp);
+    partie.commence = true;
+    element("intro").hidden = true;
+    noter("Début du combat.");
+    partie.actif = "joueur";
+    element("fin-tour").disabled = true;
+}
+
+// Vérifie que le joueur peut agir.
+function peutJouer() {
+    if (!partie || !partie.commence) return false;
+    if (partie.fin) noter("Le combat est terminé.");
+    else if (partie.actif === "joueur") return true;
+    else noter("Attendez la fin du tour adverse.");
+    return false;
+}
+
+// Sélectionne le rôle de la prochaine carte.
+function choisirRole(role) {
+    if (!peutJouer()) return;
+    partie.role = role;
+    noter("Choisissez une carte dans votre main.");
+}
+
+// Pose la carte choisie et efface le rôle après une invocation réussie.
+function jouerCarte(indice) {
+    if (!peutJouer()) return;
+    const nombre = partie.joueur.main.length;
+    const message = poser(partie.joueur, indice, partie.role);
+    if (partie.joueur.main.length < nombre) partie.role = "";
+    noter(message);
+}
+
+// Relie les boutons aux actions du jeu.
+function brancherBoutons() {
+    element("lumiere").onclick = function() { commencer("Lumière"); };
+    element("tenebres").onclick = function() { commencer("Ténèbres"); };
+    element("entrer").onclick = function() { commencer(); };
+    element("attaque").onclick = function() { choisirRole("ATQ"); };
+    element("defense").onclick = function() { choisirRole("DEF"); };
+    element("piocher").onclick = function() { if (peutJouer()) noter(piocher(partie.joueur)); };
+    element("rejouer").onclick = nouvellePartie;
+}
+
+// Attend le catalogue avant de lancer la partie.
+async function initialiser() {
+    try {
+        catalogue = await chargerCartes();
+    } catch (erreur) {
+        element("message-intro").textContent = "Impossible de charger les cartes. Ouvrez l’Arène avec Live Server.";
+        return;
+    }
+    brancherBoutons();
+    nouvellePartie();
+}
+
+initialiser();

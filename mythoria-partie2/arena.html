@@ -6,6 +6,7 @@
     <title>Arène | MYTHORIA</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="assets/styles/style.css">
+    <script type="module" src="js/main.js"></script>
 </head>
 <body class="bg-gray-900 text-white min-h-screen">
     <header class="bg-gray-900 border-b border-yellow-700">
@@ -22,40 +23,40 @@
         </div>
     </header>
     <main class="max-w-7xl mx-auto p-4">
-        <section id="intro" class="panneau max-w-lg mx-auto text-center p-6" hidden>
+        <section id="intro" class="panneau max-w-lg mx-auto text-center p-6">
             <h1 class="font-serif text-3xl text-yellow-200 mb-4">L’Arène de Mythoria</h1>
             <p id="tirage" class="font-bold mb-2">Pile ou face</p>
             <p id="message-intro" class="mb-4">Ouvrez l’Arène avec Live Server.</p>
             <form id="camps" hidden>
-                <button disabled type="button" id="lumiere" class="bouton or">Lumière</button>
-                <button disabled type="button" id="tenebres" class="bouton">Ténèbres</button>
+                <button type="button" id="lumiere" class="bouton or">Lumière</button>
+                <button type="button" id="tenebres" class="bouton">Ténèbres</button>
             </form>
-            <button disabled type="button" id="entrer" class="bouton or" hidden>Entrer dans l’Arène</button>
+            <button type="button" id="entrer" class="bouton or" hidden>Entrer dans l’Arène</button>
             <a id="preparer" href="../html/deck.html" class="text-yellow-200 underline">Préparer mon deck</a>
         </section>
 
-        <section id="jeu" aria-label="Arène de combat">
+        <section id="jeu" hidden aria-label="Arène de combat">
             <div class="flex flex-col md:flex-row gap-4">
                 <div class="panneau plateau p-3">
                     <h2 class="text-purple-200 font-bold">Main adverse</h2>
-                    <div id="main-adversaire" class="rangee"><div class="case">1</div><div class="case">2</div><div class="case">3</div><div class="case">4</div><div class="case">5</div></div>
+                    <div id="main-adversaire" class="rangee"></div>
                     <h2 class="text-purple-200 font-bold mt-3">Terrain adverse</h2>
-                    <div id="terrain-adversaire" class="rangee"><div class="case">1</div><div class="case">2</div><div class="case">3</div><div class="case">4</div><div class="case">5</div><div class="case">6</div><div class="case">7</div><div class="case">8</div><div class="case">9</div><div class="case">10</div></div>
+                    <div id="terrain-adversaire" class="rangee"></div>
                     <h2 class="text-yellow-200 font-bold mt-4">Votre terrain</h2>
-                    <div id="terrain-joueur" class="rangee"><div class="case">1</div><div class="case">2</div><div class="case">3</div><div class="case">4</div><div class="case">5</div><div class="case">6</div><div class="case">7</div><div class="case">8</div><div class="case">9</div><div class="case">10</div></div>
+                    <div id="terrain-joueur" class="rangee"></div>
 
                     <section class="mt-4 p-3 bg-gray-900 rounded border border-purple-800">
                         <h2 class="text-yellow-200 font-bold mb-2">Votre action</h2>
                         <p id="message" class="text-sm mb-2" role="status">Choisissez un rôle, puis une carte.</p>
                         <div class="flex flex-wrap gap-2">
-                            <button disabled id="attaque" type="button" class="bouton">Attaque</button>
-                            <button disabled id="defense" type="button" class="bouton">Défense</button>
-                            <button disabled id="fin-tour" type="button" class="bouton or">Fin de tour</button>
+                            <button id="attaque" type="button" class="bouton">Attaque</button>
+                            <button id="defense" type="button" class="bouton">Défense</button>
+                            <button id="fin-tour" type="button" class="bouton or">Fin de tour</button>
                         </div>
                     </section>
 
                     <h2 class="text-yellow-200 font-bold mt-3">Votre main <span id="nombre-main">5 / 5</span></h2>
-                    <div id="main-joueur" class="rangee"><div class="case"><img src="assets/images/aurelion-dawnkeeper.jpg" alt="Aurélion"><span>800 ATQ · 500 DEF</span></div><div class="case">2</div><div class="case">3</div><div class="case">4</div><div class="case">5</div></div>
+                    <div id="main-joueur" class="rangee"></div>
                 </div>
 
                 <aside class="infos flex flex-col gap-4">
@@ -70,11 +71,11 @@
                         <p id="pv-joueur" class="text-xl font-bold">3 000 PV</p>
                         <img class="pile" src="assets/images/pioche.png" alt="">
                         <p>Votre pioche · <span id="pioche-joueur">10</span></p>
-                        <button disabled id="piocher" type="button" class="bouton mt-2">Piocher</button>
+                        <button id="piocher" type="button" class="bouton mt-2">Piocher</button>
                     </section>
                     <section class="panneau p-4">
                         <h2 class="font-bold text-yellow-200 mb-2">Historique</h2>
-                        <ul id="historique" class="journal text-sm"><li>Maquette du plateau.</li></ul>
+                        <ul id="historique" class="journal text-sm"><li>Début de la partie.</li></ul>
                     </section>
                 </aside>
             </div>
@@ -83,7 +84,7 @@
         <section id="fin" class="panneau max-w-lg mx-auto p-6 text-center" hidden>
             <h2 id="resultat" class="font-serif text-3xl text-yellow-200 mb-3" tabindex="-1"></h2>
             <p id="score" class="mb-3"></p>
-            <button disabled type="button" id="rejouer" class="bouton or">Rejouer</button>
+            <button type="button" id="rejouer" class="bouton or">Rejouer</button>
         </section>
     </main>
     <footer class="bg-gray-900 border-t border-yellow-700 text-center p-4">© 2026 MYTHORIA</footer>
