@@ -1,6 +1,8 @@
 import {chargerCartes, creerCamp, DECK_SIZE, lireDeck, poser, piocher, TAILLE_MAIN} from "./cards.js";
-import {addItem, loadItems} from "./state.js";
-import {choisirCamps, lancerPiece} from "./turns.js";
+import {attaquer} from "./combat.js";
+import {jouerAdversaire} from "./opponent.js";
+import {addItem, loadItems, saveItems} from "./state.js";
+import {changerTour, choisirCamps, lancerPiece} from "./turns.js";
 import {clearForm, element, render} from "./ui.js";
 import {formatDate, hasard} from "./utils.js";
 
@@ -11,7 +13,7 @@ let catalogue = [];
 function noter(texte) {
     addItem(partie.historique, formatDate(new Date()) + " · " + texte);
     element("message").textContent = texte;
-    render(partie, jouerCarte, null);
+    render(partie, jouerCarte, jouerAttaque);
 }
 
 // Mélange les decks et présente le résultat du lancer.
@@ -57,8 +59,7 @@ function commencer(camp) {
     partie.commence = true;
     element("intro").hidden = true;
     noter("Début du combat.");
-    partie.actif = "joueur";
-    element("fin-tour").disabled = true;
+    if (partie.actif === "adversaire") finirTourAdverse();
 }
 
 // Vérifie que le joueur peut agir.
@@ -86,6 +87,37 @@ function jouerCarte(indice) {
     noter(message);
 }
 
+// Attaque les points de vie adverses avec la carte sélectionnée.
+function jouerAttaque(indice) {
+    if (!peutJouer()) return;
+    noter(attaquer(partie, "joueur", indice));
+    verifierFin();
+}
+
+// Enregistre le résultat une fois et affiche le bouton Rejouer.
+function verifierFin() {
+    if (partie.fin || (partie.joueur.pv > 0 && partie.adversaire.pv > 0)) return false;
+    const gagne = partie.adversaire.pv === 0;
+    const cle = gagne ? "mythoria_arene_victoires" : "mythoria_arene_defaites";
+    const nombre = Number(loadItems(cle)) || 0;
+    saveItems(cle, nombre + 1);
+    partie.fin = true;
+    element("resultat").textContent = gagne ? "Vous avez gagné !" : "Vous avez perdu !";
+    element("score").textContent = "Vous · " + partie.joueur.pv + " PV | Adversaire · " + partie.adversaire.pv + " PV";
+    render(partie, jouerCarte, jouerAttaque);
+    element("resultat").focus();
+    return true;
+}
+
+// Laisse jouer l’adversaire, puis rend la main au joueur.
+function finirTourAdverse() {
+    jouerAdversaire(partie, noter);
+    if (!verifierFin()) {
+        changerTour(partie);
+        noter("À vous de jouer.");
+    }
+}
+
 // Relie les boutons aux actions du jeu.
 function brancherBoutons() {
     element("lumiere").onclick = function() { commencer("Lumière"); };
@@ -94,6 +126,11 @@ function brancherBoutons() {
     element("attaque").onclick = function() { choisirRole("ATQ"); };
     element("defense").onclick = function() { choisirRole("DEF"); };
     element("piocher").onclick = function() { if (peutJouer()) noter(piocher(partie.joueur)); };
+    element("fin-tour").onclick = function() {
+        if (!peutJouer()) return;
+        changerTour(partie);
+        finirTourAdverse();
+    };
     element("rejouer").onclick = nouvellePartie;
 }
 
