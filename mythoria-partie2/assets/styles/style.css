@@ -3,7 +3,7 @@ body { background: #111827 url("../images/fond-arene.png") center / cover fixed;
 .panneau { background: #181428; border: 1px solid #64516d; border-radius: .5rem; }
 .plateau { flex: 1; min-width: 0; }
 .infos { width: 15rem; }
-.rangee { display: flex; flex-wrap: wrap; gap: .25rem; margin: .25rem 0; }
+.rangee { display: flex; flex-wrap: wrap; gap: .2rem; margin: .25rem 0; }
 .case {
     width: calc(20% - .2rem);
     min-height: 4rem;

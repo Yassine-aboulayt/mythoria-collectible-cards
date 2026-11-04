@@ -5,10 +5,19 @@ export function addItem(liste, message) {
 
 // Lit une valeur enregistrée sous forme de texte.
 export function loadItems(cle) {
-    return localStorage.getItem(cle) || "";
+    try {
+        return localStorage.getItem(cle) || "";
+    } catch (erreur) {
+        return "";
+    }
 }
 
 // Enregistre une valeur sous forme de texte.
 export function saveItems(cle, valeur) {
-    localStorage.setItem(cle, String(valeur));
+    try {
+        localStorage.setItem(cle, String(valeur));
+        return true;
+    } catch (erreur) {
+        return false;
+    }
 }

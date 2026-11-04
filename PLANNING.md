@@ -52,13 +52,13 @@ Date prévue : 02/11/2026.
 
 ### Sous-tâches
 
-- [ ] Utiliser import, export et type="module".
-- [ ] Charger le catalogue et le deck de la première partie.
-- [ ] Créer les utilitaires generateId et formatDate.
-- [ ] Créer addItem, loadItems, saveItems, renderList et clearForm.
-- [ ] Mélanger les cartes et limiter la main à cinq.
-- [ ] Tirer au sort le premier joueur et attribuer les camps opposés.
-- [ ] Gérer la pioche, l’invocation et la sauvegarde LocalStorage.
+- [x] Utiliser import, export et type="module".
+- [x] Charger le catalogue et le deck de la première partie.
+- [x] Créer les utilitaires generateId et formatDate.
+- [x] Créer addItem, loadItems, saveItems, renderList et clearForm.
+- [x] Mélanger les cartes et limiter la main à cinq.
+- [x] Tirer au sort le premier joueur et attribuer les camps opposés.
+- [x] Gérer la pioche, l’invocation et la sauvegarde LocalStorage.
 
 ## 5. Jouer les tours et les combats
 
@@ -68,11 +68,11 @@ Date prévue : 03/11/2026.
 
 ### Sous-tâches
 
-- [ ] Appliquer la pénalité de 20 % hors camp sans modifier le catalogue.
-- [ ] Autoriser une attaque par créature et par tour.
-- [ ] Calculer les dégâts, retirer les créatures détruites et gérer l’attaque directe.
-- [ ] Faire jouer une action valide à l’adversaire.
-- [ ] Bloquer les actions impossibles et arrêter à zéro HP.
+- [x] Appliquer la pénalité de 20 % hors camp sans modifier le catalogue.
+- [x] Autoriser une attaque par créature et par tour.
+- [x] Calculer les dégâts aux joueurs et la réduction des cartes en défense. Les cartes restent sur le terrain.
+- [x] Faire jouer une action valide à l’adversaire.
+- [x] Bloquer les actions impossibles et arrêter à zéro HP.
 
 ## 6. Vérifier et publier le jeu
 
@@ -82,7 +82,7 @@ Date prévue : 04/11/2026.
 
 ### Sous-tâches
 
-- [ ] Tester les règles, les tours et le rechargement.
+- [x] Tester les règles, les tours et le rechargement.
 - [ ] Vérifier clavier, contrastes et affichage mobile.
 - [ ] Tester plusieurs navigateurs selon leur disponibilité.
 - [ ] Vérifier HTML, CSS et poids des images.
@@ -96,7 +96,7 @@ Date prévue : 05/11/2026 avant 11 h 59.
 
 ### Sous-tâches
 
-- [ ] Vérifier le parcours complet jusqu’à la victoire ou la défaite.
+- [x] Vérifier le parcours complet jusqu’à la victoire ou la défaite.
 - [ ] Remettre le code source, le README, le planning et le lien Vercel.
 - [ ] Préparer la démonstration et les explications du code.
 
