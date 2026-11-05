@@ -2,31 +2,55 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/html/index.html"
+      "destination": "/mythoria-partie1/html/index.html"
     },
     {
       "source": "/index.html",
-      "destination": "/html/index.html"
+      "destination": "/mythoria-partie1/html/index.html"
     },
     {
       "source": "/shop.html",
-      "destination": "/html/shop.html"
+      "destination": "/mythoria-partie1/html/shop.html"
     },
     {
       "source": "/opening.html",
-      "destination": "/html/opening.html"
+      "destination": "/mythoria-partie1/html/opening.html"
     },
     {
       "source": "/grimoire.html",
-      "destination": "/html/grimoire.html"
+      "destination": "/mythoria-partie1/html/grimoire.html"
     },
     {
       "source": "/deck.html",
-      "destination": "/html/deck.html"
+      "destination": "/mythoria-partie1/html/deck.html"
     },
     {
       "source": "/style.css",
-      "destination": "/html/style.css"
+      "destination": "/mythoria-partie1/html/style.css"
+    },
+    {
+      "source": "/html/:path*",
+      "destination": "/mythoria-partie1/html/:path*"
+    },
+    {
+      "source": "/js/:path*",
+      "destination": "/mythoria-partie1/js/:path*"
+    },
+    {
+      "source": "/images/:path*",
+      "destination": "/mythoria-partie1/images/:path*"
+    },
+    {
+      "source": "/docs/:path*",
+      "destination": "/mythoria-partie1/docs/:path*"
+    },
+    {
+      "source": "/assets/:path*",
+      "destination": "/mythoria-partie2/assets/:path*"
+    },
+    {
+      "source": "/PLANNING.md",
+      "destination": "/mythoria-partie2/PLANNING.md"
     }
   ],
   "redirects": [

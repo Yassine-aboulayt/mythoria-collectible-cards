@@ -9,6 +9,13 @@ Il contient six pages : Accueil, Boutique, Ouverture, Grimoire, Mon jeu et Arèn
 - [Ouvrir l’Arène sur Vercel](https://mythoria-collectible-cards-wbbj.vercel.app/arena.html)
 - [Voir le code sur GitHub](https://github.com/Yassine-aboulayt/mythoria-collectible-cards)
 
+## Organisation
+
+- [Partie 1](mythoria-partie1/README.md) contient les cinq pages, les images et les scripts de collection.
+- [Partie 2](mythoria-partie2/README.md) contient l’Arène, son catalogue, ses images et ses modules.
+
+Pour démarrer avec Live Server, ouvre [Accueil](mythoria-partie1/html/index.html), puis utilise le menu pour aller dans l’Arène.
+
 ## Outils utilisés
 
 - HTML pour le contenu des pages.
@@ -82,9 +89,9 @@ Le deck est enregistré dans LocalStorage et revient après actualisation.
 
 ## L’arène
 
-Sur [Mythoria avec l’Arène](https://mythoria-collectible-cards-wbbj.vercel.app), ouvre **Mon jeu**, prépare 20 créatures, puis clique sur **Arène** dans le menu. Le deck est enregistré dans le navigateur pour l’adresse utilisée. Un deck préparé sur Live Server est donc disponible à cette adresse locale.
+Sur [Mythoria avec l’Arène](https://mythoria-collectible-cards-wbbj.vercel.app), ouvre **Mon jeu**, prépare au moins 15 créatures, puis clique sur **Arène** dans le menu. Le deck est enregistré dans le navigateur pour l’adresse utilisée. Un deck préparé sur Live Server est donc disponible à cette adresse locale.
 
-- La pièce décide qui commence et choisit son camp. L’Arène mélange les decks et prend 15 cartes par joueur. Les deux joueurs commencent à 3 000 PV, avec 5 cartes en main et 10 dans leur pioche.
+- La pièce décide qui commence et choisit son camp. Les deux joueurs commencent à 3 000 PV, avec 5 cartes en main et 10 dans leur pioche.
 - Choisis **Attaque** ou **Défense**, puis clique sur une carte en main pour la poser dans la première case libre. Clique sur une carte ATQ posée pour attaquer.
 - Chaque carte DEF réduit les dégâts de chaque attaque. Les cartes du camp opposé perdent 20 % de leurs valeurs d’ATQ et de DEF. Les cartes restent sur le terrain.
 - **Fin de tour** laisse l’adversaire jouer. À zéro PV, la partie se termine. **Rejouer** ou actualiser la page relance le tirage. Les victoires et les défaites restent enregistrées.
@@ -94,7 +101,7 @@ Le code de l’Arène se trouve dans le dossier [mythoria-partie2](mythoria-part
 ## Planification
 
 Les tâches sont dans mon [tableau GitHub Projects](https://github.com/users/Yassine-aboulayt/projects/5).
-La deuxième partie est dans la [planification de l’arène](PLANNING.md) et son [tableau GitHub Projects](https://github.com/users/Yassine-aboulayt/projects/6).
+La deuxième partie est dans la [planification de l’arène](mythoria-partie2/PLANNING.md) et son [tableau GitHub Projects](https://github.com/users/Yassine-aboulayt/projects/6).
 
 Le livrable du 4e jour contient le site sur Vercel, le code sur GitHub,
 la planification et ce README.

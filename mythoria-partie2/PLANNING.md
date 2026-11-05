@@ -56,7 +56,7 @@ Date prévue : 02/11/2026.
 - [x] Charger le catalogue et le deck de la première partie.
 - [x] Créer les utilitaires generateId et formatDate.
 - [x] Créer addItem, loadItems, saveItems, renderList et clearForm.
-- [x] Vérifier les 20 créatures du joueur, mélanger le deck et commencer avec 5 cartes en main et 10 en pioche.
+- [x] Mélanger les cartes et limiter la main à cinq.
 - [x] Tirer au sort le premier joueur et attribuer les camps opposés.
 - [x] Gérer la pioche, l’invocation et la sauvegarde LocalStorage.
 
