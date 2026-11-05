@@ -1,11 +1,12 @@
 # MYTHORIA
 
 Mythoria est un projet de site sur un jeu de cartes fantastique.
-Il contient cinq pages : Accueil, Boutique, Ouverture, Grimoire et Mon jeu.
+Il contient six pages : Accueil, Boutique, Ouverture, Grimoire, Mon jeu et Arène.
 
 ## Liens
 
 - [Voir le site](https://mythoria-collectible-cards-wbbj.vercel.app)
+- [Ouvrir l’Arène sur Vercel](https://mythoria-collectible-cards-wbbj.vercel.app/arena.html)
 - [Voir le code sur GitHub](https://github.com/Yassine-aboulayt/mythoria-collectible-cards)
 
 ## Outils utilisés
@@ -13,7 +14,7 @@ Il contient cinq pages : Accueil, Boutique, Ouverture, Grimoire et Mon jeu.
 - HTML pour le contenu des pages.
 - Tailwind CSS pour les couleurs et la mise en page.
 - CSS pour les images de fond.
-- JavaScript pour le panier, les tirages, la collection et le deck.
+- JavaScript pour le panier, les tirages, la collection, le deck et le combat.
 
 ## Les pages
 
@@ -22,6 +23,7 @@ Il contient cinq pages : Accueil, Boutique, Ouverture, Grimoire et Mon jeu.
 - Ouverture : ouvrir les boosters achetés et obtenir des cartes aléatoires.
 - Grimoire : voir sa collection, filtrer par rareté et lire les détails.
 - Mon jeu : choisir jusqu’à vingt cartes possédées, sans doublons.
+- [Arène](mythoria-partie2/arena.html) : jouer contre un adversaire automatique.
 
 Les boosters, les cartes obtenues et le deck restent après actualisation grâce à LocalStorage.
 La collection peut contenir plusieurs exemplaires. Le deck accepte une seule copie par carte.
@@ -78,15 +80,26 @@ Le jeu contient au maximum vingt cartes, avec une seule copie de chaque carte.
 Le compteur et les statistiques changent avec les cartes choisies.
 Le deck est enregistré dans LocalStorage et revient après actualisation.
 
+## L’arène
+
+Ouvre le dossier dans VS Code et lance Live Server sur la page d’accueil. Dans **Mon jeu**, prépare au moins 15 créatures, puis ouvre [Arène](mythoria-partie2/arena.html) depuis le menu. Garde la même adresse Live Server pour que le deck de **Mon jeu** soit accessible.
+
+- La pièce décide qui commence et choisit son camp. Les deux joueurs commencent à 3 000 PV, avec 5 cartes en main et 10 dans leur pioche.
+- Choisis **Attaque** ou **Défense**, puis clique sur une carte en main pour la poser dans la première case libre. Clique sur une carte ATQ posée pour attaquer.
+- Chaque carte DEF réduit les dégâts de chaque attaque. Les cartes du camp opposé perdent 20 % de leurs valeurs d’ATQ et de DEF. Les cartes restent sur le terrain.
+- **Fin de tour** laisse l’adversaire jouer. À zéro PV, la partie se termine. **Rejouer** ou actualiser la page relance le tirage. Les victoires et les défaites restent enregistrées.
+
+Le code de l’Arène se trouve dans le dossier [mythoria-partie2](mythoria-partie2). Le fichier [main.js](mythoria-partie2/js/main.js) relie les modules, et [cards.json](mythoria-partie2/data/cards.json) contient le catalogue. Live Server permet au navigateur de charger les modules et les données.
+
 ## Planification
 
 Les tâches sont dans mon [tableau GitHub Projects](https://github.com/users/Yassine-aboulayt/projects/5).
+La deuxième partie est dans la [planification de l’arène](PLANNING.md) et son [tableau GitHub Projects](https://github.com/users/Yassine-aboulayt/projects/6).
 
 Le livrable du 4e jour contient le site sur Vercel, le code sur GitHub,
 la planification et ce README.
 
-Le projet complet prévoit cinq pages.
-La date de remise finale est le 27/10/2026 à 11 h 59.
+La première partie prévoyait cinq pages et une remise le 27/10/2026 à 11 h 59.
 
 
 ## Planning / Tasks completed
