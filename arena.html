@@ -7,8 +7,24 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
         <link rel="stylesheet" href="assets/styles/style.css">
     </head>
-    <body class="bg-gray-900 text-white">
-        <main class="max-w-6xl mx-auto p-4">
+    <body class="bg-gray-900 text-white min-h-screen flex flex-col">
+        <header class="bg-gray-900 border-b border-yellow-700">
+            <div class="flex flex-wrap items-center justify-between gap-4 p-4">
+                <a href="html/index.html" class="w-32 md:w-48">
+                    <img src="images/logo.png" alt="MYTHORIA">
+                </a>
+                <nav class="flex flex-wrap justify-center gap-5">
+                    <a href="html/index.html" class="hover:text-yellow-300">Accueil</a>
+                    <a href="html/shop.html" class="hover:text-yellow-300">Boutique</a>
+                    <a href="html/opening.html" class="hover:text-yellow-300">Ouverture</a>
+                    <a href="html/grimoire.html" class="hover:text-yellow-300">Grimoire</a>
+                    <a href="html/deck.html" class="hover:text-yellow-300">Mon jeu</a>
+                    <a href="arena.html" class="text-yellow-300 font-bold border-b-2 border-yellow-400">Arène</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="w-full max-w-6xl mx-auto p-4 flex-1">
             <h1 class="text-3xl font-serif text-yellow-200 mb-4">MYTHORIA — Arène</h1>
 
             <div class="flex flex-wrap justify-between gap-4 mb-4">
@@ -133,5 +149,22 @@
                 <button id="fin-tour" type="button" class="bg-purple-900 rounded p-4" disabled>Fin de tour</button>
             </div>
         </main>
+
+        <footer class="bg-gray-900 border-t border-yellow-700">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 p-4">
+                <a href="html/index.html" class="w-48">
+                    <img src="images/logo.png" alt="MYTHORIA">
+                </a>
+                <nav class="flex flex-wrap justify-center gap-5">
+                    <a href="html/index.html" class="hover:text-yellow-300">Accueil</a>
+                    <a href="html/shop.html" class="hover:text-yellow-300">Boutique</a>
+                    <a href="html/opening.html" class="hover:text-yellow-300">Ouverture</a>
+                    <a href="html/grimoire.html" class="hover:text-yellow-300">Grimoire</a>
+                    <a href="html/deck.html" class="hover:text-yellow-300">Mon jeu</a>
+                    <a href="arena.html" class="text-yellow-300 font-bold border-b-2 border-yellow-400">Arène</a>
+                </nav>
+            </div>
+            <p class="text-xs text-gray-400 text-center pb-4">© 2026 MYTHORIA</p>
+        </footer>
     </body>
 </html>
