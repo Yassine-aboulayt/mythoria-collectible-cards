@@ -1,0 +1,30 @@
+body { background: #111827 url("../images/fond-arene.png") center / cover fixed; }
+[hidden] { display: none !important; }
+.panneau { background: #181428; border: 1px solid #64516d; border-radius: .5rem; }
+.plateau { flex: 1; min-width: 0; }
+.infos { width: 15rem; }
+.rangee { display: flex; flex-wrap: wrap; gap: .2rem; margin: .25rem 0; }
+.case {
+    width: calc(20% - .2rem);
+    min-height: 4rem;
+    height: clamp(4rem, 11vw, 6.7rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #6d5782;
+    border-radius: .25rem;
+    background: #27203d;
+    font-size: clamp(.44rem, 1.25vw, .75rem);
+    white-space: nowrap;
+}
+.case img { width: 100%; flex: 1; min-height: 0; object-fit: contain; }
+.case span { padding: .12rem; }
+.case:not(:disabled):hover { border-color: #f1c573; }
+.bouton { background: #482f70; border-radius: .3rem; padding: .45rem .7rem; }
+.bouton:hover { background: #624295; }
+.or, .or:hover { background: #edbf68; color: #20162c; }
+.pile { width: 3.5rem; margin: .25rem auto; }
+.journal { max-height: 9rem; overflow-y: auto; }
+@media (max-width: 767px) { .infos { width: 100%; } }
