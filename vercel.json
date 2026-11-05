@@ -47,10 +47,6 @@
     {
       "source": "/assets/:path*",
       "destination": "/mythoria-partie2/assets/:path*"
-    },
-    {
-      "source": "/PLANNING.md",
-      "destination": "/mythoria-partie2/PLANNING.md"
     }
   ],
   "redirects": [

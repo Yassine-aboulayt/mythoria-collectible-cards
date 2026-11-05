@@ -13,6 +13,7 @@ Il contient six pages : Accueil, Boutique, Ouverture, Grimoire, Mon jeu et Arèn
 
 - [Partie 1](mythoria-partie1/README.md) contient les cinq pages, les images et les scripts de collection.
 - [Partie 2](mythoria-partie2/README.md) contient l’Arène, son catalogue, ses images et ses modules.
+- [Planification générale](PLANNING.md) regroupe les liens vers les deux parties.
 
 Pour démarrer avec Live Server, ouvre [Accueil](mythoria-partie1/html/index.html), puis utilise le menu pour aller dans l’Arène.
 
