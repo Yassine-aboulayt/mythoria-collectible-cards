@@ -56,7 +56,7 @@ Date prévue : 02/11/2026.
 - [x] Charger le catalogue et le deck de la première partie.
 - [x] Créer les utilitaires generateId et formatDate.
 - [x] Créer addItem, loadItems, saveItems, renderList et clearForm.
-- [x] Mélanger les cartes et limiter la main à cinq.
+- [x] Vérifier les 20 créatures du joueur, mélanger le deck et commencer avec 5 cartes en main et 10 en pioche.
 - [x] Tirer au sort le premier joueur et attribuer les camps opposés.
 - [x] Gérer la pioche, l’invocation et la sauvegarde LocalStorage.
 
@@ -86,7 +86,7 @@ Date prévue : 04/11/2026.
 - [ ] Vérifier clavier, contrastes et affichage mobile.
 - [ ] Tester plusieurs navigateurs selon leur disponibilité.
 - [ ] Vérifier HTML, CSS et poids des images.
-- [ ] Déployer sur Vercel et actualiser le README.
+- [x] Déployer sur Vercel et actualiser le README.
 
 ## 7. Remettre le livrable final
 

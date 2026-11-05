@@ -5,7 +5,7 @@ Il contient six pages : Accueil, Boutique, Ouverture, Grimoire, Mon jeu et Arèn
 
 ## Liens
 
-- [Voir le site](https://mythoria-collectible-cards-wbbj.vercel.app)
+- [Jouer à Mythoria sur Vercel — site complet](https://mythoria-collectible-cards-wbbj.vercel.app/)
 - [Ouvrir l’Arène sur Vercel](https://mythoria-collectible-cards-wbbj.vercel.app/arena.html)
 - [Voir le code sur GitHub](https://github.com/Yassine-aboulayt/mythoria-collectible-cards)
 
@@ -82,9 +82,9 @@ Le deck est enregistré dans LocalStorage et revient après actualisation.
 
 ## L’arène
 
-Ouvre le dossier dans VS Code et lance Live Server sur la page d’accueil. Dans **Mon jeu**, prépare au moins 15 créatures, puis ouvre [Arène](mythoria-partie2/arena.html) depuis le menu. Garde la même adresse Live Server pour que le deck de **Mon jeu** soit accessible.
+Sur [Mythoria avec l’Arène](https://mythoria-collectible-cards-wbbj.vercel.app), ouvre **Mon jeu**, prépare 20 créatures, puis clique sur **Arène** dans le menu. Le deck est enregistré dans le navigateur pour l’adresse utilisée. Un deck préparé sur Live Server est donc disponible à cette adresse locale.
 
-- La pièce décide qui commence et choisit son camp. Les deux joueurs commencent à 3 000 PV, avec 5 cartes en main et 10 dans leur pioche.
+- La pièce décide qui commence et choisit son camp. L’Arène mélange les decks et prend 15 cartes par joueur. Les deux joueurs commencent à 3 000 PV, avec 5 cartes en main et 10 dans leur pioche.
 - Choisis **Attaque** ou **Défense**, puis clique sur une carte en main pour la poser dans la première case libre. Clique sur une carte ATQ posée pour attaquer.
 - Chaque carte DEF réduit les dégâts de chaque attaque. Les cartes du camp opposé perdent 20 % de leurs valeurs d’ATQ et de DEF. Les cartes restent sur le terrain.
 - **Fin de tour** laisse l’adversaire jouer. À zéro PV, la partie se termine. **Rejouer** ou actualiser la page relance le tirage. Les victoires et les défaites restent enregistrées.
