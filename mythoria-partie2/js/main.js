@@ -1,4 +1,4 @@
-import {chargerCartes, creerCamp, DECK_SIZE, lireDeck, poser, piocher, TAILLE_MAIN} from "./cards.js";
+import {chargerCartes, creerCamp, lireDeck, poser, piocher, TAILLE_DECK} from "./cards.js";
 import {attaquer} from "./combat.js";
 import {jouerAdversaire} from "./opponent.js";
 import {addItem, loadItems, saveItems} from "./state.js";
@@ -20,12 +20,11 @@ function noter(texte) {
 function nouvellePartie() {
     partie = null;
     const deck = lireDeck(loadItems("mythoria_deck"));
-    const taille = DECK_SIZE + TAILLE_MAIN;
     element("intro").hidden = false;
     element("jeu").hidden = true;
     element("fin").hidden = true;
-    if (deck.length < taille) {
-        element("message-intro").textContent = "Ajoutez " + taille + " créatures dans Mon jeu pour combattre (" + deck.length + " disponibles).";
+    if (deck.length < TAILLE_DECK) {
+        element("message-intro").textContent = "Ajoutez " + TAILLE_DECK + " créatures dans Mon jeu pour combattre (" + deck.length + " disponibles). Utilisez Mon jeu sur ce même site : chaque adresse garde son propre deck.";
         return;
     }
     partie = {joueur: creerCamp(deck), adversaire: creerCamp(catalogue), actif: lancerPiece(),
@@ -139,7 +138,7 @@ async function initialiser() {
     try {
         catalogue = await chargerCartes();
     } catch (erreur) {
-        element("message-intro").textContent = "Impossible de charger les cartes. Ouvrez l’Arène avec Live Server.";
+        element("message-intro").textContent = "Impossible de charger les cartes. Actualisez la page.";
         return;
     }
     brancherBoutons();

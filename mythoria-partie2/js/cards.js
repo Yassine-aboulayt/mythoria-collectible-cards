@@ -2,12 +2,14 @@ import {generateId, hasard} from "./utils.js";
 
 export const DECK_SIZE = 10;
 export const TAILLE_MAIN = 5;
+export const TAILLE_DECK = 20;
 export const TAILLE_TERRAIN = 10;
 let cartes = [];
 
 // Charge les cartes de l’Arène au démarrage.
 export async function chargerCartes() {
-    const reponse = await fetch("data/cards.json");
+    const adresse = new URL("../data/cards.json", import.meta.url);
+    const reponse = await fetch(adresse);
     if (!reponse.ok) throw new Error("Catalogue indisponible.");
     cartes = await reponse.json();
     return cartes;
@@ -19,7 +21,7 @@ export function lireDeck(texte) {
     for (const id of texte.split('"')) {
         const carte = cartes.find(function(element) { return element.id === id; });
         if (carte && !deck.includes(carte)) deck.push(carte);
-        if (deck.length === DECK_SIZE + TAILLE_MAIN) break;
+        if (deck.length === TAILLE_DECK) break;
     }
     return deck;
 }
